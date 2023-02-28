@@ -5,6 +5,7 @@ import Inicio from "../pages/Inicio";
 import Intercambiar from "../pages/Intercambiar";
 import Servicios from "../pages/Servicios";
 import Perfil from "../pages/Perfil";
+import "./App.scss";
 
 const App = () => {
   return (
