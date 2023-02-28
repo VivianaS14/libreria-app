@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap");
+$app-width: 100%;
+$app-main-color: #f4f1e8;
+$app-ft-color: #9b4819;
+$font-family: "Radley", serif;
+
+.Navbar {
+  width: $app-width;
+  background-color: $app-main-color;
+
+  &__logo {
+    margin-left: 1rem;
+  }
+
+  &__items {
+    font-size: 20px;
+    gap: 3rem;
+
+    .item__link {
+      color: $app-ft-color;
+      font-family: $font-family;
+      font-style: italic;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Navbar__items {
+    gap: 0;
+  }
+}
