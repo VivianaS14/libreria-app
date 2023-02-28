@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
-const AppContext = createContext();
-const DispatchAppContext = createContext();
+export const AppContext = createContext();
+export const DispatchAppContext = createContext();
 
 const Context = (props) => {
   const [modal, setModal] = useState(false);
