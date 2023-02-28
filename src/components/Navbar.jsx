@@ -8,6 +8,7 @@ const Navbar = () => {
         <li>Intercambiar</li>
         <li>Servicios</li>
         <li>Perfil</li>
+        <li>Holi</li>
       </ul>
     </div>
   );
