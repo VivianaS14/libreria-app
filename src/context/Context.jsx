@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 const AppContext = createContext();
 const DispatchAppContext = createContext();
 
-const Context = (children) => {
+const Context = (props) => {
   const [modal, setModal] = useState(false);
   const estado = { modal };
   const dispatcher = { setModal };
@@ -11,7 +11,7 @@ const Context = (children) => {
   return (
     <AppContext.Provider value={estado}>
       <DispatchAppContext.Provider value={dispatcher}>
-        {children}
+        {props.children}
       </DispatchAppContext.Provider>
     </AppContext.Provider>
   );
