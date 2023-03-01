@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Contenedor from "../containers/Contenedor";
-import Inicio from "../pages/Inicio";
+import Inicio from "../pages/Inicio/Inicio";
 import Intercambiar from "../pages/Intercambiar";
 import Servicios from "../pages/Servicios";
 import Perfil from "../pages/Perfil";

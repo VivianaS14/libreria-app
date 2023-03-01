@@ -4,6 +4,7 @@ import { Logout, Menu } from "@mui/icons-material";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import Login from "../Login/Login";
 
 const Navbar = () => {
   return (
@@ -59,6 +60,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Login />
+              </li>
+              {/* <li className="nav-item">
                 <Link
                   to="/perfil"
                   className="nav-link item__link"
@@ -75,7 +79,7 @@ const Navbar = () => {
                 >
                   <Logout sx={{ fontSize: 30 }} />
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
