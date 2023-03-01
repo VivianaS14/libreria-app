@@ -13,6 +13,7 @@ const Login = () => {
 
   return (
     <>
+      {!modal && <button onClick={() => setModal(true)}>Inicia sesión</button>}
       {modal && (
         <div className="Login">
           <div className="Login__container">
