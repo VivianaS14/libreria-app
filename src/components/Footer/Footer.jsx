@@ -12,7 +12,7 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <div className="Footer">
-      <div class="w-50 Footer__content">
+      <div className="w-50 Footer__content">
         <div className="content__frase">
           <p>Un oasis de conocimiento en la ciudad.</p>
         </div>
@@ -23,7 +23,7 @@ const Footer = () => {
           <Twitter sx={{ fontSize: 30, padding: 1 }} />
         </div>
       </div>
-      <div class="w-25 Footer__content">
+      <div className="w-25 Footer__content">
         <div className="content__contacto">
           <EmailRounded sx={{ fontSize: 30, padding: 1 }} />
           <div className="">
