@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap");
+$app-width: 100%;
+$app-main-color: #f4f1e8;
+$app-ft-color: #9b4819;
+$font-family: "Radley", serif;
+
+.EventsItem {
+  height: 400px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family;
+
+  h3,
+  p {
+    text-align: center;
+  }
+
+  hr {
+    width: 100%;
+    border: 0.1rem solid $app-ft-color;
+  }
+
+  &__info {
+    font-weight: bold;
+    span {
+      color: $app-ft-color;
+    }
+  }
+}
