@@ -9,3 +9,10 @@ $font-family: "Radley", serif;
   font-size: 3rem;
   color: $app-ft-color;
 }
+
+@media screen and (max-width: 991px) {
+  .Events__title {
+    font-size: 2rem;
+    text-align: center;
+  }
+}

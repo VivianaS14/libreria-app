@@ -30,3 +30,9 @@ $font-family: "Radley", serif;
     }
   }
 }
+
+@media screen and (max-width: 991px) {
+  .EventsItem {
+    padding: 0;
+  }
+}
