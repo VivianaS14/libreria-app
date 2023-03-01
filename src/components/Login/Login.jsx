@@ -3,6 +3,7 @@ import { AppContext, DispatchAppContext } from "../../context/Context";
 import user from "./img/user.svg";
 import InputForm from "./InputForm/InputForm";
 import "./Login.scss";
+import PhotoUser from "./PhotoUser/PhotoUser";
 
 const Login = () => {
   const [login, setLogin] = useState(false);
@@ -22,7 +23,7 @@ const Login = () => {
             <div className="Login__infoContainer">
               <p className="Login__logo">A</p>
               <h1 className="Login__titulo">
-                Triple 
+                Triple
                 <span className="Login__tituloColor"> AAA</span>
               </h1>
               <p className="Login__info">
@@ -39,7 +40,7 @@ const Login = () => {
                     <InputForm placeholder="Nombre y apellido" type="text" />
                     <InputForm placeholder="Email" type="email" />
                     <InputForm placeholder="Contraseña" type="password" />
-
+                    <PhotoUser />
                     <button className="Login__button">Registrarse</button>
                   </>
                 )}
