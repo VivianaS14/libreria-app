@@ -5,8 +5,10 @@ export const DispatchAppContext = createContext();
 
 const Context = (props) => {
   const [modal, setModal] = useState(false);
-  const estado = { modal };
-  const dispatcher = { setModal };
+  const [picture, setPicture] = useState("");
+
+  const estado = { modal,picture };
+  const dispatcher = { setModal,setPicture };
 
   return (
     <AppContext.Provider value={estado}>
