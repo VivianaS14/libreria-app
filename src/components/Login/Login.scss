@@ -1,157 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap");
 
 $colorPrimary: rgb(154, 59, 22);
 $colorButton: rgb(183, 89, 27);
 $colorButonGoogle: rgb(163, 103, 43);
 
 .Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(115, 114, 114, 0.566);
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+
+  &__container {
+    width: 80%;
+    height: 80%;
+    font-family: "Ubuntu";
+    display: grid;
+    overflow: scroll;
+
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    background-color: rgb(237, 228, 213);
+
+    position: relative;
+  }
+
+  &__exit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__infoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__logo {
+    background-color: $colorPrimary;
+    color: transparent !important;
+    font-family: "Lora", serif;
+    font-weight: bold;
+    font-size: 35px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    text-shadow: 15px 12px white, 38px 25px white, 61px 38px white;
+    border: solid 5px white;
+    box-shadow: 0px 0px 0px 5px $colorPrimary;
+  }
+
+  &__titulo {
+    font-size: 35px;
+    font-family: "Lora", serif;
+  }
+
+  &__tituloColor {
+    color: $colorPrimary;
+  }
+
+  &__info {
+    width: 80%;
+    font-size: 25px;
+  }
+
+  &__formContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    background-color: rgba(115, 114, 114, 0.566);
-    height: 100vh;
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    left: 0;
+    flex-direction: column;
+  }
 
+  &__iconUser {
+    width: 90px;
+  }
 
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 
-    &__container {
-        width: 80%;
-        height: 80%;
-        font-family: 'Ubuntu';
-        display: grid;
-        overflow: scroll;
-
-        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-        background-color: rgb(237, 228, 213);
-
-        position: relative;
-
+    &input {
+      border-radius: 8px;
     }
+  }
 
-    &__exit {
-        position: absolute;
-        top: 0;
-        right: 0;
-        border: none;
-        background-color: red;
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-        width: 30px;
-        height: 30px;
-        font-size: 20px;
-        text-align: center;
+  &__button {
+    background-color: $colorButton;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+
+    &:hover {
+      opacity: 0.5;
     }
+  }
 
-    &__infoContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+  &__color {
+    color: $colorPrimary;
+  }
+
+  &__buttonGoogle {
+    background-color: $colorButonGoogle;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+
+    &:hover {
+      opacity: 0.5;
     }
+  }
 
-    &__logo {
-        background-color: $colorPrimary;
-        color: transparent !important;
-        font-family: 'Lora', serif;
-        font-weight: bold;
-        font-size: 35px;
-        width: 100px;
-        height: 100px;
-        border-radius: 100px;
-        text-shadow: 15px 12px white, 38px 25px white, 61px 38px white;
-        border: solid 5px white;
-        box-shadow: 0px 0px 0px 5px $colorPrimary;
-    }
-
-    &__titulo {
-        font-size: 35px;
-        font-family: 'Lora', serif;
-    }
-
-    &__tituloColor {
-        color: $colorPrimary;
-    }
-
-    &__info {
-        width: 80%;
-        font-size: 25px;
-    }
-
-
-    &__formContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    &__iconUser {
-        width: 90px;
-    }
-
-    &__form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-
-        &input {
-            border-radius: 8px;
-        }
-    }
-
-    &__button {
-        background-color: $colorButton ;
-        color: white;
-        font-weight: bold;
-        border: none;
-        padding: 5px;
-        border-radius: 8px;
-
-        &:hover {
-            opacity: .5;
-        }
-    }
-
-    &__color {
-        color: $colorPrimary;
-    }
-
-    &__buttonGoogle {
-        background-color: $colorButonGoogle ;
-        color: white;
-        font-weight: bold;
-        border: none;
-        padding: 5px;
-        border-radius: 8px;
-
-        &:hover {
-            opacity: .5;
-        }
-
-    }
-
-    .Login__google {
-        background-image: linear-gradient(to right,
-                #4285F4 0%,
-                #4285F4 20%,
-                #DB4437 22%,
-                #DB4437 40%,
-                #F4B400 40%,
-                #F4B400 58%,
-                #4285F4 60%,
-                #4285F4 70%,
-                #0F9D58 85%,
-                #DB4437 0%,
-            );
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-
+  .Login__google {
+    background-image: linear-gradient(
+      to right,
+      #4285f4 0%,
+      #4285f4 20%,
+      #db4437 22%,
+      #db4437 40%,
+      #f4b400 40%,
+      #f4b400 58%,
+      #4285f4 60%,
+      #4285f4 70%,
+      #0f9d58 85%,
+      #db4437 0%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 }
