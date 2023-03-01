@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const Service = () => {
     return (
-        <Box maxWidth="xl"
+        <Box 
                    sx={{
                        backgroundColor: "#314028",
                        height:500,
