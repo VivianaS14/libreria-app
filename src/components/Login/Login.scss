@@ -24,6 +24,7 @@ $colorButonGoogle: rgb(163, 103, 43);
         height: 80%;
         font-family: 'Ubuntu';
         display: grid;
+        overflow: scroll;
 
         grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
         background-color: rgb(237, 228, 213);
