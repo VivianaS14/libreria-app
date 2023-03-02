@@ -3,7 +3,6 @@ import {data} from './utils/data';
 import {Container, Grid, Typography} from "@mui/material";
 import CardMostRead from "./CardMostRead/CardMostRead";
 const MostRead = () => {
-    console.log(data)
     return (
         <Container maxWidth="xl" sx={{display: 'flex', flexDirection: 'column', alignItems: "center"}}>
             <Typography variant="h4" sx={{mb: 2}}>Lo mas leído</Typography>
