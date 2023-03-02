@@ -27,7 +27,7 @@ const PhotoUser = () => {
      :
      <div>
      <div>
-       {picture == "" ? (
+       {picture == null ? (
          <Webcam
            audio={false}
            height={400}
@@ -41,11 +41,11 @@ const PhotoUser = () => {
        )}
      </div>
      <div>
-       {picture != "" ? (
+       {picture != null ? (
          <button
            onClick={(e) => {
              e.preventDefault();
-             setPicture("");
+             setPicture(null);
            }}
            className="btn btn-primary"
          >
