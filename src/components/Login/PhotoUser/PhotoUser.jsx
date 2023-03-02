@@ -37,7 +37,7 @@ const PhotoUser = () => {
            videoConstraints={videoConstraints}
          />
        ) : (
-         <img src={picture} />
+         <img style={{width:400}} src={picture} />
        )}
      </div>
      <div>
