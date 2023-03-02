@@ -1,9 +1,13 @@
 import React from "react";
+import './UploadPhoto.scss'
 
 function UploadPhoto({ ...props }) {
   return (
-    <div>
+    <div className="file-select">
+      
+
       <input type="file" {...props} />
+     
     </div>
   );
 }
