@@ -45,7 +45,6 @@ const Context = (props) => {
     createUserWithEmailAndPassword(auth, user.email, user.password)
       .then((result) => {
         console.log(result);
-        //  if (!dataUser.find((e) => e.email === result.user.email)) {
           addDoc(collection(db, "users"), {
             fullName: user.fullName,
             address: user.address,
@@ -54,7 +53,6 @@ const Context = (props) => {
             phone: user.phone,
             picture: picture,
           });
-        //  }
       })
       .catch((err) => alert(err.message));
   };
