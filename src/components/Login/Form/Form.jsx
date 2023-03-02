@@ -50,6 +50,28 @@ const Form = () => {
               type="email"
             />
             <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="address"
+              placeholder="Direccción"
+              type="text"
+            />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="city"
+              placeholder="ciudad"
+              type="text"
+            />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="phone"
+              placeholder="Celular"
+              type="number"
+              minLength="10"
+            />
+            <InputForm
               onChange={(e) => handlerChange(e)}
               minLength="6"
               name="password"
