@@ -1,16 +1,24 @@
 import React, { useContext, useState } from "react";
 import { AppContext, DispatchAppContext } from "../../../context/Context";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
+import { auth, db } from "../../../firebase/firebase";
+
 import InputForm from "../InputForm/InputForm";
 import PhotoUser from "../PhotoUser/PhotoUser";
 import UploadPhoto from "../UploadPhoto/UploadPhoto";
 
 const Form = () => {
   const [login, setLogin] = useState(false);
-  const { setPicture, setUser } = useContext(DispatchAppContext);
+  const { setPicture, setUser, createUser,loginUser } = useContext(DispatchAppContext);
   const { user } = useContext(AppContext); //temporal mientras se crea la base de datos
 
   const handlerRegister = (e) => {
     e.preventDefault();
+   
   };
 
   const mostrarImagen = (event) => {
@@ -32,7 +40,7 @@ const Form = () => {
   return (
     <>
       <h2>{!login ? "Registrarse" : "Iniciar Sesión"}</h2>
-      <form className="Login__form">
+      <form onSubmit={(e) => handlerRegister(e)} className="Login__form">
         {!login && (
           <>
             <InputForm
@@ -81,20 +89,29 @@ const Form = () => {
             />
             <PhotoUser />
             <UploadPhoto onChange={mostrarImagen} />
-            <button
-              onSubmit={(e) => handlerRegister(e)}
-              type="submit"
-              className="Login__button"
-            >
+            <button onClick={()=> createUser()} type="submit" className="Login__button">
               Registrarse
             </button>
           </>
         )}
         {login && (
           <>
-            <InputForm placeholder="Email" type="email" />
-            <InputForm placeholder="Contraseña" minLength="6" type="password" />
-            <button className="Login__button">Iniciar sesión</button>
+            <InputForm
+              onChange={(e) => handlerChange(e)}
+              required
+              placeholder="Email"
+              type="email"
+              name="email"
+            />
+            <InputForm
+              onChange={(e) => handlerChange(e)}
+              required
+              placeholder="Contraseña"
+              minLength="6"
+              name="password"
+              type="password"
+            />
+            <button onClick={()=>loginUser()} className="Login__button">Iniciar sesión</button>
           </>
         )}
         <p onClick={() => setLogin(login ? false : true)}>

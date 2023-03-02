@@ -1,4 +1,6 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 export const firebaseConfig = {
   apiKey: import.meta.env.VITE_REACT_APP_API_KEY,
@@ -8,5 +10,9 @@ export const firebaseConfig = {
   messagingSenderId: import.meta.env.VITE_REACT_APP_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_REACT_APP_ID,
 };
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore();
 
-export const app = initializeApp(firebaseConfig);
+
+export { app, auth, db };
