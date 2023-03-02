@@ -1,28 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../../context/Context";
+import { AppContext, DispatchAppContext } from "../../context/Context";
 import { auth } from "../../firebase/firebase";
-import userDefault from "../Login/img/user.svg";
 
 const User = () => {
-  const { user, dataUser, statusLogin } = useContext(AppContext);
-  const [data, setData] = useState();
-  const [loading, setloading] = useState(true);
-  const navigate = useNavigate();
+  const { dataUser, statusLogin, data, loading } = useContext(AppContext);
+  const { setModal } = useContext(DispatchAppContext);
 
-  const getUser = () => {
-    if (dataUser !== null) {
-      const rest = dataUser?.find((user) => user.email === statusLogin.email);
-      rest ? (setData(rest), setloading(false)) : setloading(true);
-    }
-  };
+  const navigate = useNavigate();
 
   const logOut = () => {
     auth.signOut();
     navigate("/");
   };
 
-  useEffect(() => getUser(), [dataUser]);
+  if (statusLogin === null) {
+    navigate("/");
+    setModal(true);
+    auth.signOut();
+  }
 
   if (loading == true) {
     return <h1>Cargando data</h1>;
@@ -38,11 +34,7 @@ const User = () => {
         Cerrar sesion
       </button>
 
-      <img
-        style={{ width: "200px" }}
-        src={picture !== null ? picture : userDefault}
-        alt=""
-      />
+      <img style={{ width: "200px" }} src={picture} alt="" />
       <div className="col-5">
         <h1> {fullName ? fullName : "Nombre de usuario"}</h1>
         <p>{email ? email : "emial"}</p>
