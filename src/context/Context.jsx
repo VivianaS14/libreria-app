@@ -5,7 +5,7 @@ export const DispatchAppContext = createContext();
 
 const Context = (props) => {
   const [modal, setModal] = useState(false);
-  const [picture, setPicture] = useState("");
+  const [picture, setPicture] = useState(null);
   const [user, setUser] = useState([]);//temporal mientras se crea la base de datos
 
   const estado = { modal, picture, user };
