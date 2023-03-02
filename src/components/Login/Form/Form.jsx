@@ -50,11 +50,12 @@ const Form = () => {
               type="email"
             />
             <InputForm
-              required
               onChange={(e) => handlerChange(e)}
+              minLength="6"
               name="password"
               placeholder="Contraseña"
               type="password"
+              required
             />
             <PhotoUser />
             <UploadPhoto onChange={mostrarImagen} />
