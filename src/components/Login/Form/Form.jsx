@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
-import { DispatchAppContext } from "../../../context/Context";
+import { AppContext, DispatchAppContext } from "../../../context/Context";
 import InputForm from "../InputForm/InputForm";
 import PhotoUser from "../PhotoUser/PhotoUser";
 import UploadPhoto from "../UploadPhoto/UploadPhoto";
 
 const Form = () => {
   const [login, setLogin] = useState(false);
-  const {setPicture } = useContext(DispatchAppContext);
-
+  const { setPicture, setUser } = useContext(DispatchAppContext);
+  const { user } = useContext(AppContext); //temporal mientras se crea la base de datos
 
   const handlerRegister = (e) => {
     e.preventDefault();
@@ -22,19 +22,44 @@ const Form = () => {
     reader.readAsDataURL(archivo);
   };
 
+  const handlerChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <>
       <h2>{!login ? "Registrarse" : "Iniciar Sesión"}</h2>
       <form className="Login__form">
         {!login && (
           <>
-            <InputForm placeholder="Nombre y apellido" type="text" />
-            <InputForm placeholder="Email" type="email" />
-            <InputForm placeholder="Contraseña" type="password" />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="fullName"
+              placeholder="Nombre y apellido"
+              type="text"
+            />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="email"
+              placeholder="Email"
+              type="email"
+            />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="password"
+              placeholder="Contraseña"
+              type="password"
+            />
             <PhotoUser />
             <UploadPhoto onChange={mostrarImagen} />
             <button
-              onClick={(e) => handlerRegister(e)}
+              onSubmit={(e) => handlerRegister(e)}
               type="submit"
               className="Login__button"
             >
