@@ -71,7 +71,7 @@ const Form = () => {
         {login && (
           <>
             <InputForm placeholder="Email" type="email" />
-            <InputForm placeholder="Contraseña" type="password" />
+            <InputForm placeholder="Contraseña" minLength="6" type="password" />
             <button className="Login__button">Iniciar sesión</button>
           </>
         )}
