@@ -1,15 +1,12 @@
 import React, { useContext, useState } from "react";
 import { AppContext, DispatchAppContext } from "../../context/Context";
+import Form from "./Form/Form";
 import user from "./img/user.svg";
-import InputForm from "./InputForm/InputForm";
 import "./Login.scss";
-import PhotoUser from "./PhotoUser/PhotoUser";
 
 const Login = () => {
-  const [login, setLogin] = useState(false);
-
   const { modal } = useContext(AppContext);
-  const { setModal } = useContext(DispatchAppContext);
+  const { setModal, setPicture } = useContext(DispatchAppContext);
 
   return (
     <>
@@ -33,33 +30,7 @@ const Login = () => {
             </div>
             <div className="Login__formContainer">
               <img className="Login__iconUser" src={user} alt="IconUsuario" />
-              <h2>Registrarse</h2>
-              <form className="Login__form">
-                {!login && (
-                  <>
-                    <InputForm placeholder="Nombre y apellido" type="text" />
-                    <InputForm placeholder="Email" type="email" />
-                    <InputForm placeholder="Contraseña" type="password" />
-                    <PhotoUser />
-                    <button className="Login__button">Registrarse</button>
-                  </>
-                )}
-                {login && (
-                  <>
-                    <InputForm placeholder="Email" type="email" />
-                    <InputForm placeholder="Contraseña" type="password" />
-                    <button className="Login__button">Iniciar sesión</button>
-                  </>
-                )}
-                <p onClick={() => setLogin(login ? false : true)}>
-                  ¿Ya tienes cuenta?
-                  <span className="Login__color"> Inicia Sesión</span>
-                </p>
-                <button className="Login__buttonGoogle">
-                  Iniciar con
-                  <span className="Login__google">Google</span>
-                </button>
-              </form>
+              <Form />
             </div>
           </div>
         </div>
