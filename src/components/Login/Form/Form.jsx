@@ -10,15 +10,22 @@ import { auth, db } from "../../../firebase/firebase";
 import InputForm from "../InputForm/InputForm";
 import PhotoUser from "../PhotoUser/PhotoUser";
 import UploadPhoto from "../UploadPhoto/UploadPhoto";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [login, setLogin] = useState(false);
-  const { setPicture, setUser, createUser,loginUser } = useContext(DispatchAppContext);
+  const { setPicture, setUser, createUser, loginUser } =
+    useContext(DispatchAppContext);
   const { user } = useContext(AppContext); //temporal mientras se crea la base de datos
+  const navigate = useNavigate();
 
   const handlerRegister = (e) => {
     e.preventDefault();
-   
+  };
+
+  const handlerLogin = () => {
+    loginUser();
+    navigate("/perfil");
   };
 
   const mostrarImagen = (event) => {
@@ -89,7 +96,11 @@ const Form = () => {
             />
             <PhotoUser />
             <UploadPhoto onChange={mostrarImagen} />
-            <button onClick={()=> createUser()} type="submit" className="Login__button">
+            <button
+              onClick={() => createUser()}
+              type="submit"
+              className="Login__button"
+            >
               Registrarse
             </button>
           </>
@@ -111,7 +122,9 @@ const Form = () => {
               name="password"
               type="password"
             />
-            <button onClick={()=>loginUser()} className="Login__button">Iniciar sesión</button>
+            <button onClick={() => handlerLogin()} className="Login__button">
+              Iniciar sesión
+            </button>
           </>
         )}
         <p onClick={() => setLogin(login ? false : true)}>
