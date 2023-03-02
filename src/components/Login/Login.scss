@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap");
+@import '../../sass/general.scss';
 
-$colorPrimary: rgb(154, 59, 22);
-$colorButton: rgb(183, 89, 27);
-$colorButonGoogle: rgb(163, 103, 43);
+
 
 .Login {
   display: flex;
@@ -16,11 +13,28 @@ $colorButonGoogle: rgb(163, 103, 43);
   z-index: 3;
   top: 0;
   left: 0;
+  font-family: $font-family ;
+
+  &__btnDefault {
+    color: $app-ft-color;
+    font-style: italic;
+    font-family: $font-family ;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transform: translatey(6px);
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
 
   &__container {
     width: 80%;
     height: 80%;
-    font-family: "Ubuntu";
+    font-family: $font-family;
     display: grid;
     overflow: scroll;
 
@@ -28,6 +42,10 @@ $colorButonGoogle: rgb(163, 103, 43);
     background-color: rgb(237, 228, 213);
 
     position: relative;
+
+    @media (max-width:1550px){
+      padding: 20px;
+    }
   }
 
   &__exit {
@@ -55,7 +73,7 @@ $colorButonGoogle: rgb(163, 103, 43);
   &__logo {
     background-color: $colorPrimary;
     color: transparent !important;
-    font-family: "Lora", serif;
+    font-family: $font-family;
     font-weight: bold;
     font-size: 35px;
     width: 100px;
@@ -68,7 +86,7 @@ $colorButonGoogle: rgb(163, 103, 43);
 
   &__titulo {
     font-size: 35px;
-    font-family: "Lora", serif;
+    font-family: $font-family;
   }
 
   &__tituloColor {
@@ -132,19 +150,17 @@ $colorButonGoogle: rgb(163, 103, 43);
   }
 
   .Login__google {
-    background-image: linear-gradient(
-      to right,
-      #4285f4 0%,
-      #4285f4 20%,
-      #db4437 22%,
-      #db4437 40%,
-      #f4b400 40%,
-      #f4b400 58%,
-      #4285f4 60%,
-      #4285f4 70%,
-      #0f9d58 85%,
-      #db4437 0%
-    );
+    background-image: linear-gradient(to right,
+        #4285f4 0%,
+        #4285f4 20%,
+        #db4437 22%,
+        #db4437 40%,
+        #f4b400 40%,
+        #f4b400 58%,
+        #4285f4 60%,
+        #4285f4 70%,
+        #0f9d58 85%,
+        #db4437 0%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
