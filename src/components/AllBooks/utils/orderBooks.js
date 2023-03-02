@@ -1,0 +1,1 @@
+export const dataOrder = ['Mas reciente', 'Puntuacion max - min', 'Puntuacion min -max', 'Nombre A -Z', 'Nombre Z - A']
