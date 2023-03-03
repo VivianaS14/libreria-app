@@ -6,6 +6,7 @@ import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import React, { createContext, useEffect, useState } from "react";
 import { auth, db } from "../firebase/firebase";
 import userDefault from "../components/Login/img/user.svg";
+import Alert from "../components/Alert";
 
 export const AppContext = createContext();
 export const DispatchAppContext = createContext();
@@ -17,12 +18,13 @@ const Context = (props) => {
   const [dataUser, setDataUser] = useState();
   const [statusLogin, setStautsLogin] = useState(null);
   const [data, setData] = useState();
-  const [loading, setloading] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [alert, setAlert] = useState({});
 
   const getUser = () => {
     if (statusLogin !== null) {
       const rest = dataUser?.find((user) => user.email === statusLogin.email);
-      rest ? (setData(rest), setloading(false)) : setloading(true);
+      rest ? (setData(rest), setLoading(false)) : setLoading(true);
     }
   };
 
@@ -34,9 +36,8 @@ const Context = (props) => {
         });
       });
     } catch (error) {
-      console.log(error);
+      setAlert({ type: "error", message: error.message });
     }
-    return statusLogin;
   };
 
   const getData = () => {
@@ -57,7 +58,6 @@ const Context = (props) => {
     const avatar = picture ? picture : userDefault;
     createUserWithEmailAndPassword(auth, user.email, user.password)
       .then((result) => {
-        console.log(result);
         addDoc(collection(db, "users"), {
           fullName: user.fullName,
           address: user.address,
@@ -66,29 +66,60 @@ const Context = (props) => {
           phone: user.phone,
           picture: avatar,
         });
+        setAlert({
+          type: "success",
+          message: "Cuenta creada correctamente",
+        });
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => setAlert({ type: "error", message: err.message }));
   };
 
   const loginUser = () => {
     signInWithEmailAndPassword(auth, user.email, user.password)
-      .then(() => {
-        console.log("success full login");
-      })
-      .catch((err) => alert(err.message));
+      .then(() => setAlert({ type: "success", message: "Sesión iniciada" }))
+      .catch((err) =>
+        setAlert({
+          type: "error",
+          message: err.message,
+        })
+      );
     getUser();
     setModal(false);
   };
 
-  const estado = { modal, picture, user, dataUser, statusLogin, data, loading };
-  const dispatcher = { setModal, setPicture, setUser, createUser, loginUser };
+  const estado = {
+    modal,
+    picture,
+    user,
+    dataUser,
+    statusLogin,
+    data,
+    loading,
+    alert,
+  };
+  const dispatcher = {
+    setModal,
+    setPicture,
+    setUser,
+    createUser,
+    loginUser,
+    getUser,
+    setLoading,
+    setAlert,
+  };
 
+  // Agregar condición para mostrar la alerta
   return (
-    <AppContext.Provider value={estado}>
-      <DispatchAppContext.Provider value={dispatcher}>
-        {props.children}
-      </DispatchAppContext.Provider>
-    </AppContext.Provider>
+    <>
+      {alert.type && (
+        <Alert setAlert={setAlert} type={alert.type} children={alert.message} />
+      )}
+      <AppContext.Provider value={estado}>
+        <DispatchAppContext.Provider value={dispatcher}>
+          {props.children}
+        </DispatchAppContext.Provider>
+      </AppContext.Provider>
+    </>
   );
 };
 
