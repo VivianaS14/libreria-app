@@ -1,11 +1,5 @@
 import React, { useContext, useState } from "react";
 import { AppContext, DispatchAppContext } from "../../../context/Context";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
-import { auth, db } from "../../../firebase/firebase";
 
 import InputForm from "../InputForm/InputForm";
 import PhotoUser from "../PhotoUser/PhotoUser";
@@ -21,11 +15,6 @@ const Form = () => {
 
   const handlerRegister = (e) => {
     e.preventDefault();
-  };
-
-  const handlerLogin = () => {
-    loginUser();
-    navigate("/perfil");
   };
 
   const mostrarImagen = (event) => {
@@ -122,7 +111,7 @@ const Form = () => {
               name="password"
               type="password"
             />
-            <button onClick={() => handlerLogin()} className="Login__button">
+            <button onClick={() => loginUser()} className="Login__button">
               Iniciar sesión
             </button>
           </>

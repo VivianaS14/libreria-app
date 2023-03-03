@@ -5,20 +5,22 @@ import { auth } from "../../firebase/firebase";
 
 const User = () => {
   const { dataUser, statusLogin, data, loading } = useContext(AppContext);
-  const { setModal } = useContext(DispatchAppContext);
-
+  const { setModal, getUser, setLoading } = useContext(DispatchAppContext);
   const navigate = useNavigate();
+  getUser();
+
+  useEffect(() => {
+    if (statusLogin) {
+      console.log(statusLogin);
+    } else {
+      alert("sesion cerrada");
+      navigate("/");
+    }
+  }, [statusLogin]);
 
   const logOut = () => {
     auth.signOut();
-    navigate("/");
   };
-
-  if (statusLogin === null) {
-    navigate("/");
-    setModal(true);
-    auth.signOut();
-  }
 
   if (loading == true) {
     return <h1>Cargando data</h1>;
