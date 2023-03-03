@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "./img/logo-app.png";
 import { Logout, Menu } from "@mui/icons-material";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import Login from "../Login/Login";
+import { AppContext } from "../../context/Context";
+import { auth } from "../../firebase/firebase";
+import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Navbar.scss";
 
 const Navbar = () => {
+  const { statusLogin } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    auth.signOut();
+    navigate("/");
+  };
+
   return (
     <div className="Navbar">
       <nav className="navbar navbar-expand-lg">
@@ -59,27 +70,32 @@ const Navbar = () => {
                   Servicios
                 </Link>
               </li>
-              <li className="nav-item">
-                <Login />
-              </li>
-              {/* <li className="nav-item">
-                <Link
-                  to="/perfil"
-                  className="nav-link item__link"
-                  aria-current="page"
-                >
-                  Perfil
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/"
-                  className="nav-link item__link"
-                  aria-current="page"
-                >
-                  <Logout sx={{ fontSize: 30 }} />
-                </Link>
-              </li> */}
+              {statusLogin ? (
+                <>
+                  <li className="nav-item">
+                    <Link
+                      to="/perfil"
+                      className="nav-link item__link"
+                      aria-current="page"
+                    >
+                      Perfil
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      to="/"
+                      className="nav-link item__link"
+                      aria-current="page"
+                    >
+                      <Logout sx={{ fontSize: 30 }} onClick={logOut} />
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <li className="nav-item">
+                  <Login />
+                </li>
+              )}
             </ul>
           </div>
         </div>
