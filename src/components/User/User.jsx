@@ -37,7 +37,7 @@ const User = () => {
       </button>
 
       <img style={{ width: "200px" }} src={picture} alt="" />
-      <div className="col-5">
+      <div className="col-5" style={{ fontFamily: "Radley, serif" }}>
         <h1> {fullName ? fullName : "Nombre de usuario"}</h1>
         <p>{email ? email : "emial"}</p>
         <p>Libros cambiados: 0 </p>

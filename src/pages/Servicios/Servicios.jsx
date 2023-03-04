@@ -7,10 +7,7 @@ const Servicios = () => {
   return (
     <div className="Servicios">
       <h2>Servicios</h2>
-      <p>
-        Traemos todo tipo de servicios para que recuperes tus libros que creias
-        perdidos.
-      </p>
+
       <div className="Servicios__content">
         {data.map((item) => (
           <Box className="Servicios__item" key={item.id}>

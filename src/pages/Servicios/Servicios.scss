@@ -41,8 +41,17 @@ $font-family: "Radley", serif;
       border: 0.1rem solid $app-main-color;
     }
 
+    h3 {
+      padding-top: 0.8rem;
+      font-style: italic;
+    }
+
     p {
       text-align: center;
+    }
+
+    &:hover {
+      background-color: #485342;
     }
   }
 }

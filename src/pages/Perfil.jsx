@@ -3,10 +3,8 @@ import User from "../components/User/User";
 
 const Perfil = () => {
   return (
-    <div>
-      <div className="Perfil">
-        <User/>
-      </div>
+    <div className="Perfil">
+      <User />
     </div>
   );
 };
