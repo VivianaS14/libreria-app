@@ -14,8 +14,9 @@ $font-family: "Radley", serif;
   font-family: $font-family;
 
   h2 {
-    font-weight: bold;
     font-size: 40px;
+    font-style: italic;
+    color: $app-ft-color;
   }
 
   &__content {
