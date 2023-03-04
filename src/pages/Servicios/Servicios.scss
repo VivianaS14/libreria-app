@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap");
+$app-width: 100%;
+$app-main-color: #f4f1e8;
+$app-ft-color: #9b4819;
+$font-family: "Radley", serif;
+
+.Servicios {
+  width: $app-width;
+  padding: 2rem 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 2rem;
+  font-family: $font-family;
+
+  h2 {
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &__item {
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    width: 450px;
+    height: 300px;
+    background-color: #314028;
+    border-radius: 10px;
+    color: $app-main-color;
+
+    hr {
+      width: 100%;
+      border: 0.1rem solid $app-main-color;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Servicios {
+    p {
+      width: 90%;
+    }
+  }
+  .Servicios__item {
+    width: 300px;
+    height: 400px;
+  }
+}
