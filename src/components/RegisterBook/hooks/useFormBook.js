@@ -1,20 +1,8 @@
 import React from "react";
 import {addOneBook} from "../../../redux/reducer/bookSlices.js";
 import {useDispatch} from "react-redux";
-import alert from "../../Alert.jsx";
 
-const initialFormBook = {
-    title: '',
-    image: '',
-    author: '',
-    datePublish: '',
-    description: '',
-    genres: [],
-    score: 0,
-    userId: ''
-}
-
-export const useFormBook = (form, statusLogin, validation) => {
+export const useFormBook = (form, statusLogin) => {
 
     const dispatch = useDispatch();
     const [errors, setErrors] = React.useState({});
@@ -56,14 +44,13 @@ export const useFormBook = (form, statusLogin, validation) => {
                 score: 0,
                 userId: statusLogin.uid
             }
-            console.log('Formulario enviado ' + book )
+            dispatch(addOneBook(book))
+            genres = []
+            form.current.reset()
+
         }else {
             setErrors(errors)
         }
-
-        //dispatch(addOneBook(book))
-        // genres = []
-        // form.current.reset()
     }
     return {
         handleChange,
