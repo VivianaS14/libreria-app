@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 
 const styles = {
   container: {
@@ -7,22 +7,23 @@ const styles = {
     padding: "1% 10%",
     top: 0,
     right: "5%",
-    fontWeight: "bold",
-    backgroundColor: "transparent",
     color: "black",
     fontWeight: "bold",
     borderRadius: 12,
+    backgroundColor: "#fff",
+    zIndex: 2
+
   },
   error: {
-    backgroundColor: "rgba(255, 0, 0, 0.1)",
     color: "red",
+    boxShadow: "0 0 0 5px rgba(255, 0, 0, 0.1)"
   },
   success: {
-    backgroundColor: "rgba(0, 128, 0, 0.1)",
     color: "green",
+    boxShadow: "0 0 0 5px rgba(0, 128, 0, 0.1)"
   },
   info: {
-    backgroundColor: "rgba(0, 0, 255, 0.1)",
+    boxShadow: "0 0 0 5px rgba(0, 0, 255, 0.1)",
     color: "blue",
   },
 };
