@@ -34,7 +34,7 @@ export const useFormBook = (form, statusLogin, validation) => {
             errors.image = 'Debes ingresar una imagen'
         }
         if (!formData.get('author').trim()){
-            errors.author = 'Debes ingresar la fecha de publicacion'
+            errors.author = 'Debes ingresar el autor del libro'
         }
         if (!formData.get('datePublish').trim()){
             errors.datePublish = 'Debes ingresar la fecha de publicacion'
