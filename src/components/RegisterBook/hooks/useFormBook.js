@@ -61,9 +61,6 @@ export const useFormBook = (form, statusLogin, validation) => {
             setErrors(errors)
         }
 
-        // if (book['title'] === '') {
-        //     alert("Ingrese todos los valores")
-        // }
         //dispatch(addOneBook(book))
         // genres = []
         // form.current.reset()
