@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Contenedor from "../containers/Contenedor";
 import Inicio from "../pages/Inicio/Inicio";
-import Intercambiar from "../pages/Intercambiar";
-import Servicios from "../pages/Servicios";
+import Intercambiar from "../pages/Intercambiar/Intercambiar";
+import Servicios from "../pages/Servicios/Servicios";
 import Perfil from "../pages/Perfil";
 import "./App.scss";
 

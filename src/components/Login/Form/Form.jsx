@@ -117,8 +117,10 @@ const Form = () => {
           </>
         )}
         <p onClick={() => setLogin(login ? false : true)}>
-          ¿Ya tienes cuenta?
-          <span className="Login__color"> Inicia Sesión</span>
+          {!login ? "¿Ya tienes una cuenta?" : "¿Aun no tienes cuenta?"}
+          <span className="Login__color">
+            {!login ? "Iniciar Sesión" : "Registrarse"}
+          </span>
         </p>
         <button className="Login__buttonGoogle">
           Iniciar con

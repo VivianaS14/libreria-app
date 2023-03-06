@@ -26,7 +26,7 @@ const User = () => {
   return (
     <div className="d-flex d-flex justify-content-around  align-items-center  border p-5 m-5 position-relative">
       <img style={{ width: "200px" }} src={picture} alt="" />
-      <div className="col-5">
+      <div className="col-5" style={{ fontFamily: "Radley, serif" }}>
         <h1> {fullName ? fullName : "Nombre de usuario"}</h1>
         <p>{email ? email : "emial"}</p>
         <p>Libros cambiados: 0 </p>
