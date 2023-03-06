@@ -4,7 +4,7 @@ import imageBook3 from '../assets/libro-don-quijote-de-la-mancha-1-cke.webp';
 export const data = [
     {
         id: 1,
-        name_book: 'El extranjero',
+        title: 'El extranjero',
         image: imageBook1,
         status: true,
         author: 'Albert Camus',
@@ -12,7 +12,7 @@ export const data = [
     },
     {
         id:2,
-        name_book: 'Un mundo feliz',
+        title: 'Un mundo feliz',
         image: imageBook2,
         status: false,
         author: 'Aldoux Huxley',
@@ -20,7 +20,7 @@ export const data = [
     },
     {
         id:3,
-        name_book: 'Don Quijote de La Mancha',
+        title: 'Don Quijote de La Mancha',
         image: imageBook3,
         status: true,
         author: 'Miguel de Cervates',
@@ -28,7 +28,7 @@ export const data = [
     },
     {
         id: 4,
-        name_book: 'El extranjero',
+        titile: 'El extranjero',
         image: imageBook1,
         status: true,
         author: 'Albert Camus',
@@ -36,7 +36,7 @@ export const data = [
     },
     {
         id:5,
-        name_book: 'Un mundo feliz',
+        title: 'Un mundo feliz',
         image: imageBook2,
         status: false,
         author: 'Aldoux Huxley',
@@ -44,7 +44,7 @@ export const data = [
     },
     {
         id:6,
-        name_book: 'Don Quijote de La Mancha',
+        title: 'Don Quijote de La Mancha',
         image: imageBook3,
         status: true,
         author: 'Miguel de Cervates',
@@ -52,7 +52,7 @@ export const data = [
     },
     {
         id: 7,
-        name_book: 'El extranjero',
+        title: 'El extranjero',
         image: imageBook1,
         status: true,
         author: 'Albert Camus',
@@ -60,7 +60,7 @@ export const data = [
     },
     {
         id:8,
-        name_book: 'Un mundo feliz',
+        title: 'Un mundo feliz',
         image: imageBook2,
         status: false,
         author: 'Aldoux Huxley',
@@ -68,7 +68,7 @@ export const data = [
     },
     {
         id:9,
-        name_book: 'Don Quijote de La Mancha',
+        title: 'Don Quijote de La Mancha',
         image: imageBook3,
         status: true,
         author: 'Miguel de Cervates',
@@ -76,7 +76,7 @@ export const data = [
     },
     {
         id: 10,
-        name_book: 'El extranjero',
+        title: 'El extranjero',
         image: imageBook1,
         status: true,
         author: 'Albert Camus',
@@ -84,7 +84,7 @@ export const data = [
     },
     {
         id:11,
-        name_book: 'Un mundo feliz',
+        title: 'Un mundo feliz',
         image: imageBook2,
         status: false,
         author: 'Aldoux Huxley',
@@ -92,106 +92,10 @@ export const data = [
     },
     {
         id:12,
-        name_book: 'Don Quijote de La Mancha',
+        title: 'Don Quijote de La Mancha',
         image: imageBook3,
         status: true,
         author: 'Miguel de Cervates',
         Language: 'Ingles'
-    },
-    {
-        id: 1,
-        name_book: 'El extranjero',
-        image: imageBook1,
-        status: true,
-        author: 'Albert Camus',
-        Language: 'Español'
-    },
-    {
-        id:2,
-        name_book: 'Un mundo feliz',
-        image: imageBook2,
-        status: false,
-        author: 'Aldoux Huxley',
-        Language: 'Español'
-    },
-    {
-        id:3,
-        name_book: 'Don Quijote de La Mancha',
-        image: imageBook3,
-        status: true,
-        author: 'Miguel de Cervates',
-        Language: 'Ingles'
-    },
-    {
-        id: 4,
-        name_book: 'El extranjero',
-        image: imageBook1,
-        status: true,
-        author: 'Albert Camus',
-        Language: 'Español'
-    },
-    {
-        id:5,
-        name_book: 'Un mundo feliz',
-        image: imageBook2,
-        status: false,
-        author: 'Aldoux Huxley',
-        Language: 'Ingles'
-    },
-    {
-        id:6,
-        name_book: 'Don Quijote de La Mancha',
-        image: imageBook3,
-        status: true,
-        author: 'Miguel de Cervates',
-        Language: 'Ingles'
-    },
-    {
-        id: 7,
-        name_book: 'El extranjero',
-        image: imageBook1,
-        status: true,
-        author: 'Albert Camus',
-        Language: 'Español'
-    },
-    {
-        id:8,
-        name_book: 'Un mundo feliz',
-        image: imageBook2,
-        status: false,
-        author: 'Aldoux Huxley',
-        Language: 'Ingles'
-    },
-    {
-        id:9,
-        name_book: 'Don Quijote de La Mancha',
-        image: imageBook3,
-        status: true,
-        author: 'Miguel de Cervates',
-        Language: 'Español'
-    },
-    {
-        id: 10,
-        name_book: 'El extranjero',
-        image: imageBook1,
-        status: true,
-        author: 'Albert Camus',
-        Language: 'Español'
-    },
-    {
-        id:11,
-        name_book: 'Un mundo feliz',
-        image: imageBook2,
-        status: false,
-        author: 'Aldoux Huxley',
-        Language: 'Ingles'
-    },
-    {
-        id:12,
-        name_book: 'Don Quijote de La Mancha',
-        image: imageBook3,
-        status: true,
-        author: 'Miguel de Cervates',
-        Language: 'Ingles'
-    },
+    }
 ]

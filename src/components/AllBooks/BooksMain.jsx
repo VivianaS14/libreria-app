@@ -1,5 +1,5 @@
 import React from "react";
-import { data } from "./utils/allBooks";
+// import { data } from "./utils/allBooks";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import CardBook from "./CardBook/CardBook.jsx";
 import Paginated from "./Paginado/Paginated.jsx";
@@ -8,23 +8,32 @@ import FilterByLenguajes from "./Filters/FilterByLenguajes.jsx";
 import FilterByAuthors from "./Filters/FilterByAuthors.jsx";
 import OrderBooks from "./Filters/OrderBooks.jsx";
 import MenuIFilter from "./MenuDrawer/MenuIFilter.jsx";
+import {getBooks} from '../../redux/actions/action.books'
+import {useDispatch, useSelector} from "react-redux";
 
 const BooksMain = () => {
+
+    const dispach = useDispatch();
+    const dataBooks = useSelector(state => state.books.allBooks)
   const [currentPag, setCurrentPag] = React.useState(1);
   const [booksByPag] = React.useState(6);
   const indexByBooks = booksByPag * currentPag;
   const indexPrimerBook = indexByBooks - booksByPag;
-  const currentBooks = data.slice(indexPrimerBook, indexByBooks);
+  const currentBooks = dataBooks.slice(indexPrimerBook, indexByBooks);
+  //const currentBooks = data.slice(indexPrimerBook, indexByBooks);
   const paginado = (event, paginado) => {
     setCurrentPag(paginado);
   };
+
+  React.useEffect(() => {
+    dispach(getBooks())
+  },[])
   return (
     <React.Fragment>
       <h2>Intercambia y Disfruta</h2>
       <Box
         sx={{
           display: "flex",
-          // justifyContent: 'flex-end',
           justifyContent: {
             xs: "space-between",
             lg: "flex-end",
@@ -80,11 +89,11 @@ const BooksMain = () => {
                 key={book.id}
               >
                 <CardBook
-                  nameBook={book.name_book}
+                  nameBook={book.title}
                   image={book.image}
                   author={book.author}
                   status={book.status}
-                  language={book.Language}
+                  language={book.idioma}
                 />
               </Grid>
             ))}
@@ -92,7 +101,8 @@ const BooksMain = () => {
         </Container>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
-        <Paginated booksByPage={booksByPag} books={data} paginado={paginado} />
+        {/*<Paginated booksByPage={booksByPag} books={data} paginado={paginado} inde={indexPrimerBook} />*/}
+          <Paginated booksByPage={booksByPag} books={dataBooks} paginado={paginado} />
       </Box>
     </React.Fragment>
   );
