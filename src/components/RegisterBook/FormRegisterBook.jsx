@@ -4,7 +4,7 @@ import './FormRegisterBook.scss';
 import {AppContext} from "../../context/Context.jsx";
 import {useFormBook} from './hooks/useFormBook';
 import InputForm from "../Login/InputForm/InputForm.jsx";
-import {Button} from "@mui/material";
+import {Button, FormHelperText} from "@mui/material";
 import {theme} from "../../theme/theme.js";
 import {ThemeProvider} from "@mui/material/styles";
 
@@ -19,11 +19,14 @@ const FormRegisterBook = () => {
             <form className="register-form-book" ref={form} >
                 <div className="input-group-sm">
                     <InputForm placeholder="nombre del libro" name='title'/>
-                    {errors.title && <span>{errors.title}</span>}
+                    {errors.title && <FormHelperText sx={{color: "#FF0000"}}>
+                        {errors.title}</FormHelperText>}
                     <InputForm placeholder="imagen del libro" name='image'/>
-                    {errors.image && <span>{errors.image}</span>}
+                    {errors.image && <FormHelperText sx={{color: "#FF0000"}}>
+                        {errors.image}</FormHelperText>}
                     <InputForm placeholder="ingrese el autor del libro" name='author'/>
-                    {errors.author && <span>{errors.author}</span>}
+                    {errors.author && <FormHelperText sx={{color: "#FF0000"}}>
+                        {errors.author}</FormHelperText>}
                     <div className="select-options">
                         <label>Ingrese el genero:</label>
                         <select onChange={handleChange} className="select-genres">
@@ -34,7 +37,8 @@ const FormRegisterBook = () => {
                                 ))
                             }
                         </select>
-                        {errors.genres && <span>{errors.genres}</span>}
+                        {errors.genres && <FormHelperText sx={{color: "#FF0000"}}>
+                            {errors.genres}</FormHelperText>}
                     </div>
                 </div>
                 <div className="date-description">
@@ -43,13 +47,15 @@ const FormRegisterBook = () => {
                         placeholder="Fecha de publicacion"
                         name="datePublish"
                     />
-                    {errors.datePublish && <span>{errors.datePublish}</span>}
+                    {errors.datePublish && <FormHelperText sx={{color: "#FF0000"}}>
+                        {errors.datePublish}</FormHelperText>}
                     <textarea
                         className="description"
                         placeholder="descripcion"
                         name="description"
                     />
-                    {errors.description && <span>{errors.description}</span>}
+                    {errors.description && <FormHelperText sx={{color: "#FF0000"}}>
+                        {errors.description}</FormHelperText>}
                 </div>
                 <ThemeProvider theme={theme}>
                     <Button
