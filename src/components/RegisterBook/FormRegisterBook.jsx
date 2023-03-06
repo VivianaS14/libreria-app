@@ -4,7 +4,7 @@ import './FormRegisterBook.scss';
 import {AppContext} from "../../context/Context.jsx";
 import {useFormBook} from './hooks/useFormBook';
 import InputForm from "../Login/InputForm/InputForm.jsx";
-import {Button} from "@mui/material";
+import {Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@mui/material";
 import {theme} from "../../theme/theme.js";
 import {ThemeProvider} from "@mui/material/styles";
 
@@ -12,7 +12,10 @@ const FormRegisterBook = () => {
 
     const {statusLogin} = useContext(AppContext);
     const form = React.useRef(null);
-    const {handleSubmit, handleChange, errors} = useFormBook(form, statusLogin);
+    const {handleSubmit,
+        handleChange,
+        errors,
+        handleChangeRadioButtons} = useFormBook(form, statusLogin);
 
     return (
         <React.Fragment>
@@ -39,6 +42,23 @@ const FormRegisterBook = () => {
                             {errors.author}</span>
                         </div>}
                     </>
+                    <FormControl>
+                        <FormLabel color="secondary">Elige el idioma</FormLabel>
+                        <RadioGroup
+                            sx={{display: 'flex', flexDirection: 'row'}}
+                        >
+                            <FormControlLabel
+                                value="Ingles"
+                                control={<Radio color="secondary" onChange={handleChangeRadioButtons}  />}
+                                label="Ingles"
+                            />
+                            <FormControlLabel
+                                value="Español"
+                                control={<Radio color="secondary" onChange={handleChangeRadioButtons} />}
+                                label="Español"
+                            />
+                        </RadioGroup>
+                    </FormControl>
                 </div>
                 <div className="select-options">
                     <label>Ingrese el genero:</label>

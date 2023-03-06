@@ -5,11 +5,15 @@ import {useDispatch} from "react-redux";
 export const useFormBook = (form, statusLogin) => {
 
     const dispatch = useDispatch();
+    const [radio, setRadio] = React.useState('');
+
+    const handleChangeRadioButtons = (event) => {
+        setRadio(event.target.value);
+    };
     const [errors, setErrors] = React.useState({});
     let genres = []
     const handleChange = (e) => {
         genres = [...genres, e.target.value]
-
     }
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,6 +45,7 @@ export const useFormBook = (form, statusLogin) => {
                 datePublish: formData.get('datePublish'),
                 description: formData.get('description'),
                 genres: genres,
+                idioma: radio,
                 score: 0,
                 userId: statusLogin.uid
             }
@@ -55,6 +60,7 @@ export const useFormBook = (form, statusLogin) => {
     return {
         handleChange,
         handleSubmit,
+        handleChangeRadioButtons,
         errors
     }
 }
