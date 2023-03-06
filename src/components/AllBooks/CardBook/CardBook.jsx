@@ -30,7 +30,7 @@ const CardBook = ({nameBook, image, status, author, language}) => {
                     }
                     <Typography >Idioma: {language}</Typography>
                     <Button variant="contained"  endIcon={<Book />}>
-                        Intercambia
+                        Detalles
                     </Button>
 
                 </CardContent>
