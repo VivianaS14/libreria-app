@@ -19,8 +19,10 @@ const FormRegisterBook = () => {
             <form className="register-form-book" ref={form} >
                 <div className="input-group-sm">
                     <InputForm placeholder="nombre del libro" name='title'/>
-                    {errors.title && <FormHelperText sx={{color: "#FF0000"}}>
-                        {errors.title}</FormHelperText>}
+                    {errors.title && <div className="container-error">
+                                        <span >{errors.title}</span>
+                                    </div>
+                    }
                     <InputForm placeholder="imagen del libro" name='image'/>
                     {errors.image && <FormHelperText sx={{color: "#FF0000"}}>
                         {errors.image}</FormHelperText>}

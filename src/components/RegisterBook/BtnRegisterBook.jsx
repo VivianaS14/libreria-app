@@ -4,14 +4,14 @@ import FormRegisterBook from "./FormRegisterBook.jsx";
 
 const BtnRegisterBook = () => {
     return (
-        <Accordion>
+        <Accordion >
             <AccordionSummary>
                 <Typography>Registrar libros</Typography>
             </AccordionSummary>
             <AccordionDetails sx={{bgcolor: "#f4f1e8"}}>
                 <FormRegisterBook />
             </AccordionDetails>
-        </Accordion>
+        </Accordion >
     );
 };
 

@@ -1,17 +1,18 @@
 .register-form-book {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 100%;
   .input-group-sm {
     display: grid;
+    width: 90%;
+    height: 10%;
     grid-template-rows: repeat(4, 1fr);
-    //input {
-    //  width: 95%;
-    //}
   }
   .select-options {
     display: flex;
     flex-direction: column;
+    margin: 25px auto;
+    width: 100%;
     .select-genres {
       height: 50px;
       border-radius: 10px;
@@ -19,12 +20,14 @@
     }
   }
   .date-description {
-    display: flex;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     align-items: center;
+    gap: 25px;
     .description {
-      height: 70px;
       width: 100%;
-      margin-left: 10px;
+      //margin-left: 10px;
       border-style: none;
       border-radius: 10px;
     }
