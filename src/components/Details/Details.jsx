@@ -18,13 +18,18 @@ const Details = ({
         <div className="details__info">
           <h1>{nameBook}</h1>
           <p>Autor: {author}</p>
-          <p>{status}</p>
           <p>{language}</p>
           <p className="details__description">{description}</p>
           <div>
-            <button  onClick={() => setModal(false)} className="btn btn-danger me-2">Close</button>
-            <button className="btn btn-info">Intercambiar</button>
+            <button
+              onClick={() => setModal(false)}
+              className="btn btn-danger me-2"
+            >
+              Close
+            </button>
+            <button className="btn btn-success">Intercambiar</button>
           </div>
+           
         </div>
       </div>
     </div>
