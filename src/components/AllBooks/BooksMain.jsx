@@ -94,6 +94,7 @@ const BooksMain = () => {
                   author={book.author}
                   status={book.status}
                   language={book.idioma}
+                  description={book.description}
                 />
               </Grid>
             ))}
