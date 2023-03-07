@@ -14,12 +14,6 @@ const Details = ({
   return (
     <div {...props} className="details">
       <div className="details__container">
-        <button
-          className="details__close btn btn-danger"
-          onClick={() => setModal(false)}
-        >
-          X
-        </button>
         <img className="details__image" src={image} alt="portada" />
         <div className="details__info">
           <h1>{nameBook}</h1>
