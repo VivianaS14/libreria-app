@@ -5,18 +5,18 @@ const Loading = () => {
   return (
     <>
 
-<div class="loading">
-  <div class="book">
-    <div class="book-cover"></div>
-    <div class="book-pages">
-      <div class="page page-1"></div>
-      <div class="page page-2"></div>
-      <div class="page page-3"></div>
-      <div class="page page-4"></div>
-      <div class="page page-5"></div>
-      <div class="page page-6"></div>
-      <div class="page page-7"></div>
-      <div class="page page-8"></div>
+<div className="loading">
+  <div className="book">
+    <div className="book-cover"></div>
+    <div className="book-pages">
+      <div className="page page-1"></div>
+      <div className="page page-2"></div>
+      <div className="page page-3"></div>
+      <div className="page page-4"></div>
+      <div className="page page-5"></div>
+      <div className="page page-6"></div>
+      <div className="page page-7"></div>
+      <div className="page page-8"></div>
     </div>
   </div>
 </div>

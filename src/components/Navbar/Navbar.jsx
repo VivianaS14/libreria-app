@@ -3,7 +3,7 @@ import Logo from "./img/logo-app.png";
 import { Logout, Menu } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Login from "../Login/Login";
-import { AppContext } from "../../context/Context";
+import { AppContext, DispatchAppContext } from "../../context/Context";
 import { auth } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,11 +11,13 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const { statusLogin } = useContext(AppContext);
+  const { setAlert } = useContext(DispatchAppContext);
   const navigate = useNavigate();
 
   const logOut = () => {
     auth.signOut();
     navigate("/");
+    setAlert({ type: "info", message: "Sesión cerrada" });
   };
 
   return (

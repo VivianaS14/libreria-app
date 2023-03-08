@@ -11,7 +11,7 @@ const styles = {
     fontWeight: "bold",
     borderRadius: 12,
     backgroundColor: "#fff",
-    zIndex: 2
+    zIndex: 4
 
   },
   error: {
@@ -23,8 +23,8 @@ const styles = {
     boxShadow: "0 0 0 5px rgba(0, 128, 0, 0.1)"
   },
   info: {
-    boxShadow: "0 0 0 5px rgba(0, 0, 255, 0.1)",
-    color: "blue",
+    boxShadow: "0 0 0 5px rgba(0, 174, 255, 0.1)",
+    color: "rgba(0, 174, 255)",
   },
 };
 

@@ -23,7 +23,7 @@ const PhotoUser = () => {
   return (
     <>
      {!photo?
-     <button className="btn btn-primary" style={{fontSize:'20px'}} onClick={()=> setPhoto(true)}>Tomar foto</button>
+     <button className="btn btn-primary w-100" style={{fontSize:'20px'}} onClick={()=> setPhoto(true)}>Tomar foto</button>
      :
      <div>
      <div>

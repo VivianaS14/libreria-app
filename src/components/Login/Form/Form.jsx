@@ -7,8 +7,8 @@ import UploadPhoto from "../UploadPhoto/UploadPhoto";
 import { useNavigate } from "react-router-dom";
 
 const Form = () => {
-  const [login, setLogin] = useState(false);
-  const { setPicture, setUser, createUser, loginUser } =
+  const [login, setLogin] = useState(true);
+  const { setPicture, setUser, createUser, loginUser,setAlert } =
     useContext(DispatchAppContext);
   const { user } = useContext(AppContext); //temporal mientras se crea la base de datos
   const navigate = useNavigate();
@@ -22,6 +22,8 @@ const Form = () => {
     const reader = new FileReader();
     reader.onload = () => {
       setPicture(reader.result);
+      setAlert({type:'info', message:"Foto subida exitosamente"})
+
     };
     reader.readAsDataURL(archivo);
   };
