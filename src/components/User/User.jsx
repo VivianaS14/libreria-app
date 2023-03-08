@@ -1,19 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext, DispatchAppContext } from "../../context/Context";
-import { auth } from "../../firebase/firebase";
 
 const User = () => {
-  const { dataUser, statusLogin, data, loading } = useContext(AppContext);
-  const { setModal, getUser, setLoading } = useContext(DispatchAppContext);
+  const {  statusLogin, data, loading } = useContext(AppContext);
+  const {  getUser } = useContext(DispatchAppContext);
   const navigate = useNavigate();
   getUser();
 
   useEffect(() => {
     if (statusLogin) {
-      console.log(statusLogin);
     } else {
-      alert("sesion cerrada");
       navigate("/");
     }
   }, [statusLogin]);
