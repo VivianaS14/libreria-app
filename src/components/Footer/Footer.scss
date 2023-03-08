@@ -1,0 +1,65 @@
+$app-main-color: #f4f1e8;
+$app-ft-color: #9b4819;
+$font-family: "Radley", serif;
+
+.Footer {
+  width: 100%;
+  height: 212px;
+  margin: auto;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: $font-family;
+  background-color: $app-ft-color;
+  color: $app-main-color;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .content__frase {
+      p {
+        padding-left: 0.8rem;
+        font-size: 34px;
+        font-weight: 600;
+      }
+    }
+
+    .content__redes {
+      p {
+        padding-left: 0.8rem;
+        font-size: 25px;
+        font-style: italic;
+      }
+    }
+
+    .content__contacto {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0;
+        padding-left: 0.8rem;
+        font-size: 20px;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Footer {
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    &__content {
+      width: 100% !important;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+$app-width: 100%;
+$app-main-color: #f4f1e8;
+$app-ft-color: #9b4819;
+$font-family: "Radley", serif;
+
+.Inicio__content {
+  width: 100%;
+  height: 700px;
+  background-image: url("./img/img-inicio.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h2,
+  h4 {
+    padding-right: 3rem;
+    font-family: $font-family;
+    font-style: italic;
+
+    span {
+      color: $app-ft-color;
+    }
+  }
+
+  button {
+    margin-right: 3rem;
+    border: none;
+    background-color: transparent;
+    font-family: $font-family;
+    font-style: italic;
+    font-size: 25px;
+    text-decoration: underline;
+    color: $app-ft-color;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Inicio__content {
+    height: 250px;
+    gap: 0.5rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h4 {
+      text-align: end;
+    }
+    h2,
+    h4 {
+      padding-right: 1rem;
+    }
+    button {
+      margin-right: 1rem;
+    }
+  }
+}

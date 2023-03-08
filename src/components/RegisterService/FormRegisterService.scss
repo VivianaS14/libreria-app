@@ -1,0 +1,17 @@
+.register-form-service {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .input-group-sm-service {
+    display: grid;
+    width: 90%;
+    grid-template-rows: repeat(2, 0.5fr);
+    gap: 25px;
+    textarea {
+      width: 110%;
+      height: 80px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
