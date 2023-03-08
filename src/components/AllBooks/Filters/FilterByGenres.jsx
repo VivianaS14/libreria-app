@@ -17,7 +17,7 @@ const FilterByGenres = () => {
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
             >
-                <Typography>Categorias </Typography>
+                <Typography>Generos </Typography>
             </AccordionSummary>
             <AccordionDetails sx={{overflowY: 'scroll', height: 200}}>
                 <FormGroup>

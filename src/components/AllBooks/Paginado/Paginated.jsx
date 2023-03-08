@@ -7,7 +7,6 @@ const Paginated = ({books, booksByPage, paginado}) => {
     for (let i = 1; i <= Math.ceil(books.length/booksByPage); i++){
         pagNumber.push(i);
     }
-    console.log(pagNumber)
     return (
         <Stack spacing={2}>
             <Pagination count={pagNumber.length}  onChange={paginado} shape="rounded" />

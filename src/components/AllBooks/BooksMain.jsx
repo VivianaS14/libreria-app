@@ -1,5 +1,4 @@
 import React from "react";
-// import { data } from "./utils/allBooks";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import CardBook from "./CardBook/CardBook.jsx";
 import Paginated from "./Paginado/Paginated.jsx";
@@ -14,13 +13,12 @@ import {useDispatch, useSelector} from "react-redux";
 const BooksMain = () => {
 
     const dispach = useDispatch();
-    const dataBooks = useSelector(state => state.books.allBooks)
+    const dataBooks = useSelector(state => state.books.copyAllBooks)
   const [currentPag, setCurrentPag] = React.useState(1);
   const [booksByPag] = React.useState(6);
   const indexByBooks = booksByPag * currentPag;
   const indexPrimerBook = indexByBooks - booksByPag;
   const currentBooks = dataBooks.slice(indexPrimerBook, indexByBooks);
-  //const currentBooks = data.slice(indexPrimerBook, indexByBooks);
   const paginado = (event, paginado) => {
     setCurrentPag(paginado);
   };

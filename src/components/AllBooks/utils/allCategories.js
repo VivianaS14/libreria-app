@@ -39,5 +39,9 @@ export const categories = [
         id: 10,
         name_category: 'Video juegos'
     },
+    {
+        id: 11,
+        name_category: 'Otros'
+    }
 
 ]
