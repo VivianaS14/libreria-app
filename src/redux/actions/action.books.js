@@ -1,4 +1,4 @@
-import {addBook, } from '../../services/addDataFirestore/addBook';
+import {addBook,} from '../../services/addDataFirestore/addBook';
 import {allBooks} from '../reducer/bookSlices';
 import {getAllBooks} from '../../services/getDataFiretore/getAllBooks';
 
@@ -11,7 +11,13 @@ export const getBooks = () => {
         dispatch(allBooks({allBooks: getDataBooks}))
     }
 }
-
 export const getBooksDate =  (state, action) => {
     state.allBooks = action.payload.allBooks
+    state.copyAllBooks = action.payload.allBooks
+}
+export const filterByLenguaje = (state, action) => {
+    state.copyAllBooks = state.allBooks.filter(book => {
+        if (action.payload === 'Todos') return state.allBooks
+        else return book.idioma === action.payload
+    })
 }
