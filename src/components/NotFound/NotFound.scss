@@ -3,11 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .crying-book {
-  width: 50%;
+  width: 10%;
   transition: transform 1s ease-in-out;
   &.book-1 {
     transform: translateY(-20px) rotate(15deg);
