@@ -1,51 +1,28 @@
 .not-found-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 24px;
-    font-weight: bold;
-    color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.crying-book {
+  width: 15vw;
+  transition: transform 1s ease-in-out;
+  &.book-1 {
+    transform: translateY(-20px) rotate(15deg);
   }
-  
-  .crying-book {
-    max-width: 400px;
-    animation-name: crying-book;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
+  &.book-2 {
+    transform: translateY(20px) rotate(-15deg);
   }
-  
-  @keyframes crying-book {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+}
+
+.not-found-message {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  &.show-message {
+    opacity: 1;
+    transform: translateY(0px);
   }
-  
-  .not-found-message {
-    margin-top: 20px;
-    opacity: 0;
-    animation-name: not-found-message;
-    animation-duration: 1s;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes not-found-message {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}
