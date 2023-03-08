@@ -9,6 +9,7 @@ import OrderBooks from "./Filters/OrderBooks.jsx";
 import MenuIFilter from "./MenuDrawer/MenuIFilter.jsx";
 import {getBooks} from '../../redux/actions/action.books'
 import {useDispatch, useSelector} from "react-redux";
+import Loading from "../Loading/Loading"
 
 const BooksMain = () => {
 
@@ -22,6 +23,7 @@ const BooksMain = () => {
   const paginado = (event, paginado) => {
     setCurrentPag(paginado);
   };
+  console.log(currentBooks)
 
   React.useEffect(() => {
     dispach(getBooks())
@@ -77,7 +79,7 @@ const BooksMain = () => {
             container
             columns={{ xs: 2, sm: 2, md: 8, lg: 12 }}
           >
-            {currentBooks.map((book) => (
+            {currentBooks.length >=1 ?currentBooks.map((book) => (
               <Grid
                 item
                 sx={{ mb: 2, pl: 1 }}
@@ -95,7 +97,9 @@ const BooksMain = () => {
                   description={book.description}
                 />
               </Grid>
-            ))}
+            ))
+            :<Loading/>
+            }
           </Grid>
         </Container>
       </Box>

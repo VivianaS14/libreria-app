@@ -1,9 +1,13 @@
-// @import "../../sass/general.scss";
- $app-ft-color: #9b4819;
-
+@import "../../sass/general.scss";
 
 $book-width: 200px;
 $book-height: 260px;
+
+.container{
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
 
 .loading {
   display: flex;
