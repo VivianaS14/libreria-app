@@ -4,22 +4,6 @@ import "./Loading.scss";
 const Loading = () => {
   return (
     <>
-      {/* <div class="loading">
-  <div class="book">
-    <div class="book-cover"></div>
-    <div class="book-pages">
-      <div class="page"></div>
-      <div class="page"></div>
-      <div class="page"></div>
-      <div class="page"></div>
-      <div class="page"></div>
-    </div>
-  </div>
-</div> */}
-
-{/* <div className="loading">
-<div className="loaddin__page"></div>
-</div> */}
 
 <div class="loading">
   <div class="book">
