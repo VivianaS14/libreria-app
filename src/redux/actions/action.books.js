@@ -21,3 +21,9 @@ export const filterByLenguaje = (state, action) => {
         else return book.idioma === action.payload
     })
 }
+export const filterByGenre = (state, action) => {
+    state.copyAllBooks = state.allBooks.filter(book => {
+        if (action.payload === 'Todos') return state.allBooks
+        return book.genres.includes(action.payload)
+    })
+}
