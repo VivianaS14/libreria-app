@@ -1,9 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { addOneBook } from "../../../redux/reducer/bookSlices.js";
 import { useDispatch } from "react-redux";
 import { DispatchAppContext } from "../../../context/Context.jsx";
 
-export const useFormBook = (form, statusLogin) => {
+export const useFormBook = (form, statusLogin,data) => {
+
+  
+
+  const [numberPhone, setNumberPhone] =useState('')
+
+  useEffect(() => {
+    setNumberPhone(data?.phone ? data.phone : "")
+  },[data])
+ 
+  const handlerPhone= (e)=>{
+     setNumberPhone(e.target.value)
+  }
+
+
   const { setAlert } = useContext(DispatchAppContext);
 
   const dispatch = useDispatch();
@@ -46,6 +60,7 @@ export const useFormBook = (form, statusLogin) => {
         author: formData.get("author"),
         datePublish: formData.get("datePublish"),
         description: formData.get("description"),
+        phone: formData.get("phone"),
         genres: genres,
         idioma: radio,
         score: 0,
@@ -63,6 +78,8 @@ export const useFormBook = (form, statusLogin) => {
     handleChange,
     handleSubmit,
     handleChangeRadioButtons,
+    handlerPhone,
+    numberPhone,
     errors,
   };
 };

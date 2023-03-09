@@ -10,10 +10,9 @@ const Details = ({
   description,
   language,
   setModal,
+  phoneNumber,
   ...props
 }) => {
-
-  const { data } = useContext(AppContext);
 
   return (
     <div {...props} className="details">
@@ -31,7 +30,7 @@ const Details = ({
             >
               Close
             </button>
-            <a className="btn btn-success" href={`https://wa.me/${data.phone}`} target='_blank'>Intercambiar</a>
+            <a className="btn btn-success" href={`https://wa.me/${phoneNumber}`} target='_blank'>Intercambiar</a>
           </div>
            
         </div>
