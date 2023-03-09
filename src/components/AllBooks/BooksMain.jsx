@@ -15,6 +15,7 @@ const BooksMain = () => {
 
     const dispach = useDispatch();
     const dataBooks = useSelector(state => state.books.copyAllBooks)
+
   const [currentPag, setCurrentPag] = React.useState(1);
   const [booksByPag] = React.useState(6);
   const indexByBooks = booksByPag * currentPag;
@@ -104,7 +105,6 @@ const BooksMain = () => {
         </Container>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
-        {/*<Paginated booksByPage={booksByPag} books={data} paginado={paginado} inde={indexPrimerBook} />*/}
           <Paginated booksByPage={booksByPag} books={dataBooks} paginado={paginado} />
       </Box>
     </React.Fragment>

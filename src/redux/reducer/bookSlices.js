@@ -2,7 +2,10 @@ import {createSlice} from '@reduxjs/toolkit';
 import {
     addBookToUser,
     getBooksDate,
-    filterByLenguaje, filterByGenre} from '../actions/action.books';
+    filterByLenguaje,
+    filterByGenre,
+    filterByAuthors
+} from '../actions/action.books';
 
 const initialState = {
     allBooks: [],
@@ -15,8 +18,14 @@ const bookSlices = createSlice({
         allBooks: getBooksDate,
         addOneBook: addBookToUser,
         filterLanguage: filterByLenguaje,
-        filterGenre: filterByGenre
+        filterGenre: filterByGenre,
+        filterAuthors: filterByAuthors
     }
 })
-export const {allBooks, addOneBook, filterLanguage, filterGenre} = bookSlices.actions
+export const {
+    allBooks,
+    addOneBook,
+    filterLanguage,
+    filterGenre,
+    filterAuthors} = bookSlices.actions
 export {bookSlices}
