@@ -27,8 +27,6 @@ const User = () => {
     );
   }
 
-  console.log(data.displayName);
-
   const {
     address,
     city,
