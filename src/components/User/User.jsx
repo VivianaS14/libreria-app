@@ -46,8 +46,8 @@ const User = () => {
       />
       <div className="text-center mt-5" style={{ fontFamily: "Radley, serif" }}>
         <h1> {fullName ? fullName : displayName}</h1>
-        <p>{email ? email : "emial"}</p>
-        <p>Libros cambiados: 0 </p>
+        <p>{email ? email : "Emial"}</p>
+        <p>Celular {phone? phone:"Celular"}</p>
       </div>
     </div>
   );
