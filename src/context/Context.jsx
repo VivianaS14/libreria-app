@@ -27,6 +27,9 @@ const Context = (props) => {
     if (statusLogin !== null) {
       const rest = dataUser?.find((user) => user.email === statusLogin.email);
       rest ? (setData(rest), setLoading(false)) : setLoading(true);
+      if (!rest) {
+        !rest ? (setData(statusLogin), setLoading(false)) : setLoading(true);
+      }
     }
   };
 
@@ -94,8 +97,8 @@ const Context = (props) => {
       .then(() => {
         () => {
           // setAlert({ type: "success", message: "Sesión iniciada" });
-          alert("Sesión iniciada")
-          console.log("inicio con goole",alert);
+          alert("Sesión iniciada");
+          console.log("inicio con goole", alert);
         };
       })
       .catch((err) => {
@@ -104,7 +107,6 @@ const Context = (props) => {
           message: err.message,
         });
       });
-
   };
 
   const estado = {
