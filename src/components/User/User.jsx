@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext, DispatchAppContext } from "../../context/Context";
 
+import Loading from "../Loading/Loading"
+
 const User = () => {
   const { statusLogin, data, loading } = useContext(AppContext);
   const { getUser } = useContext(DispatchAppContext);
@@ -16,7 +18,11 @@ const User = () => {
   }, [statusLogin]);
 
   if (loading == true) {
-    return <h1>Cargando data</h1>;
+    return <>
+    <h1>Cargando datos</h1>
+    <Loading/>
+    <br/>
+    </>;
   }
 
   const { address, city, email, fullName, phone, picture } = data;
