@@ -3,16 +3,25 @@ import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
-    Checkbox,
     FormControlLabel,
-    FormGroup,
+    Radio, RadioGroup,
     Typography
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import {allAthors} from '../utils/authors';
+import {useGetAuthors} from "../hooks/useGetAuthors.js";
+import {useDispatch, useSelector} from "react-redux";
+import {filterAuthors} from '../../../redux/reducer/bookSlices';
 
+const FilterByAuthors = ({setPaginado}) => {
+    const allBooks = useSelector(state => state.books.allBooks)
+    const {authors} = useGetAuthors(allBooks);
 
-const FilterByAuthors = () => {
+    const dispatch = useDispatch();
+    const handleFilterByAuthors = (e) => {
+        dispatch(filterAuthors(e.target.value));
+        setPaginado(1)
+    }
+
     return (
         <Accordion sx={{mb:2}} >
             <AccordionSummary
@@ -21,13 +30,26 @@ const FilterByAuthors = () => {
                 <Typography>Autores </Typography>
             </AccordionSummary>
             <AccordionDetails >
-                <FormGroup>
+
+                <RadioGroup>
+                    <FormControlLabel
+                        onChange={handleFilterByAuthors}
+                        value="Todos"
+                        control={<Radio color="secondary" />}
+                        label="Todos"
+                    />
                     {
-                        allAthors.map(item => (
-                            <FormControlLabel key={item.id} control={<Checkbox color="secondary" />} label={item.name}/>
+                        authors.map(item => (
+                            <FormControlLabel
+                                key={item.id}
+                                onChange={handleFilterByAuthors}
+                                value={item.name}
+                                control={<Radio color="secondary" />}
+                                label={item.name}
+                            />
                         ))
                     }
-                </FormGroup>
+                </RadioGroup>
             </AccordionDetails>
         </Accordion>
     );
