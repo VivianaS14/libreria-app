@@ -95,11 +95,7 @@ const Context = (props) => {
   const loginGoogle = () => {
     signInWithPopup(auth, new GoogleAuthProvider())
       .then(() => {
-        () => {
-          // setAlert({ type: "success", message: "Sesión iniciada" });
-          alert("Sesión iniciada");
-          console.log("inicio con goole", alert);
-        };
+        setAlert({ type: "success", message: "Sesión iniciada" });
       })
       .catch((err) => {
         setAlert({
