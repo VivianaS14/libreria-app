@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../context/Context";
 import "./Details.scss";
 
 const Details = ({
@@ -11,6 +12,9 @@ const Details = ({
   setModal,
   ...props
 }) => {
+
+  const { data } = useContext(AppContext);
+
   return (
     <div {...props} className="details">
       <div className="details__container">
@@ -27,7 +31,7 @@ const Details = ({
             >
               Close
             </button>
-            <button className="btn btn-success">Intercambiar</button>
+            <a className="btn btn-success" href={`https://wa.me/${data.phone}`} target='_blank'>Intercambiar</a>
           </div>
            
         </div>
