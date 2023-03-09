@@ -11,6 +11,7 @@ import {ThemeProvider} from "@mui/material/styles";
 const FormRegisterBook = () => {
 
     const {statusLogin} = useContext(AppContext);
+    console.log(statusLogin)
     const form = React.useRef(null);
     const {handleSubmit,
         handleChange,
