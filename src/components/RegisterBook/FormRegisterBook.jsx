@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { categories } from "../AllBooks/utils/allCategories";
 import { AppContext } from "../../context/Context.jsx";
 import { useFormBook } from "./hooks/useFormBook";
@@ -16,11 +16,18 @@ import { ThemeProvider } from "@mui/material/styles";
 import "./FormRegisterBook.scss";
 
 const FormRegisterBook = () => {
-  const { statusLogin } = useContext(AppContext);
+  const { statusLogin, data } = useContext(AppContext);
   const form = React.useRef(null);
 
-  const { handleSubmit, handleChange, errors, handleChangeRadioButtons } =
-    useFormBook(form, statusLogin);
+  const {
+    handleSubmit,
+    handleChange,
+    errors,
+    handleChangeRadioButtons,
+    handlerPhone,
+    numberPhone,
+  } = useFormBook(form, statusLogin, data);
+
   return (
     <React.Fragment>
       <form className="register-form-book" ref={form}>
@@ -34,7 +41,7 @@ const FormRegisterBook = () => {
             )}
           </>
           <>
-            <InputForm placeholder="Imagen del libro" name="image" />
+            <InputForm placeholder="Url portada del libro" name="image" />
             {errors.image && (
               <div className="container-error">
                 <span>{errors.image}</span>
@@ -43,6 +50,19 @@ const FormRegisterBook = () => {
           </>
           <>
             <InputForm placeholder="Ingrese el autor del libro" name="author" />
+            {errors.author && (
+              <div className="container-error">
+                <span>{errors.author}</span>
+              </div>
+            )}
+          </>
+          <>
+            <InputForm
+              placeholder="Numero de celular"
+              name="phone"
+              onChange={(e) => handlerPhone(e)}
+              value={numberPhone}
+            />
             {errors.author && (
               <div className="container-error">
                 <span>{errors.author}</span>

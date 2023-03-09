@@ -12,7 +12,7 @@ import BookIcon from "@mui/icons-material/Book";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Details from "../../Details/Details";
 
-const CardBook = ({ nameBook, image, status, author, language,description }) => {
+const CardBook = ({ nameBook, image, status, author, language,description,phoneNumber }) => {
   const [heart, setHeart] = React.useState(false);
   const [modal, setModal] = useState(false);
 
@@ -79,6 +79,7 @@ const CardBook = ({ nameBook, image, status, author, language,description }) => 
           description={description}
           status={status}
           setModal={setModal}
+          phoneNumber={phoneNumber}
         />
       )}
     </>

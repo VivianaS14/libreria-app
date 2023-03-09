@@ -95,6 +95,7 @@ const BooksMain = () => {
                   status={book.status}
                   language={book.idioma}
                   description={book.description}
+                  phoneNumber={book.phone}
                 />
               </Grid>
             ))
