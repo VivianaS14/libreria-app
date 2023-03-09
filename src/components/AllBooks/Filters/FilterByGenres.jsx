@@ -10,9 +10,14 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {categories} from '../utils/allCategories';
-
-
-const FilterByGenres = () => {
+import {filterGenre} from '../../../redux/reducer/bookSlices';
+import {useDispatch} from "react-redux";
+const FilterByGenres = ({setPaginado}) => {
+    const dispatch = useDispatch();
+    const handleChangueByGenres = (e) => {
+        dispatch(filterGenre(e.target.value))
+        setPaginado(1)
+    }
 
     return (
         <Accordion sx={{mb:2}} >
@@ -28,6 +33,7 @@ const FilterByGenres = () => {
                             <FormControlLabel
                                 value={category.name_category}
                                 key={category.id}
+                                onChange={handleChangueByGenres}
                                 control={<Radio color="secondary" />}
                                 label={category.name_category}
                             />

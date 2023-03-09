@@ -3,18 +3,18 @@ import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
-    Checkbox,
     FormControlLabel,
-    FormGroup, Radio, RadioGroup,
+    Radio, RadioGroup,
     Typography
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {filterLanguage} from '../../../redux/reducer/bookSlices';
 import {useDispatch} from "react-redux";
-const FilterByLenguajes = () => {
+const FilterByLenguajes = ({setPaginado}) => {
     const dispatch = useDispatch()
     const handleChangueLenguajes = (e) => {
         dispatch(filterLanguage(e.target.value));
+        setPaginado(1)
     }
     return (
         <Accordion sx={{mb:2}}>

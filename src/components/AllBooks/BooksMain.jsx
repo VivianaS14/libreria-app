@@ -21,10 +21,9 @@ const BooksMain = () => {
   const indexPrimerBook = indexByBooks - booksByPag;
   const currentBooks = dataBooks.slice(indexPrimerBook, indexByBooks);
   const paginado = (event, paginado) => {
+      console.log(paginado)
     setCurrentPag(paginado);
   };
-  console.log(currentBooks)
-
   React.useEffect(() => {
     dispach(getBooks())
   },[])
@@ -68,9 +67,9 @@ const BooksMain = () => {
           <Typography variant="h5" sx={{ mb: 2, fontFamily: "Radley, serif" }}>
             Filtrar por:{" "}
           </Typography>
-          <FilterByGenres />
-          <FilterByLenguajes />
-          <FilterByAuthors />
+          <FilterByGenres setPaginado={setCurrentPag} />
+          <FilterByLenguajes setPaginado={setCurrentPag}/>
+          <FilterByAuthors setPaginado={setCurrentPag}/>
         </Box>
 
         <Container maxWidth="lg">
