@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext, DispatchAppContext } from "../../context/Context";
 
+import Loading from "../Loading/Loading"
+
 const User = () => {
-  const {  statusLogin, data, loading } = useContext(AppContext);
-  const {  getUser } = useContext(DispatchAppContext);
+  const { statusLogin, data, loading } = useContext(AppContext);
+  const { getUser } = useContext(DispatchAppContext);
   const navigate = useNavigate();
   getUser();
 
@@ -16,14 +18,18 @@ const User = () => {
   }, [statusLogin]);
 
   if (loading == true) {
-    return <h1>Cargando data</h1>;
+    return <>
+    <h1>Cargando datos</h1>
+    <Loading/>
+    <br/>
+    </>;
   }
 
   const { address, city, email, fullName, phone, picture } = data;
   return (
-    <div className="d-flex d-flex justify-content-around  align-items-center  border p-5 m-5 position-relative">
+    <div className="d-flex justify-content-around flex-wrap  align-items-center  border p-5 m-5 position-relative">
       <img style={{ width: "200px" }} src={picture} alt="" />
-      <div className="col-5" style={{ fontFamily: "Radley, serif" }}>
+      <div className="text-center mt-5" style={{ fontFamily: "Radley, serif" }}>
         <h1> {fullName ? fullName : "Nombre de usuario"}</h1>
         <p>{email ? email : "emial"}</p>
         <p>Libros cambiados: 0 </p>

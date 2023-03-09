@@ -1,6 +1,8 @@
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import React, { createContext, useEffect, useState } from "react";
@@ -14,7 +16,7 @@ export const DispatchAppContext = createContext();
 const Context = (props) => {
   const [modal, setModal] = useState(false);
   const [picture, setPicture] = useState(null);
-  const [user, setUser] = useState([]); //temporal mientras se crea la base de datos
+  const [user, setUser] = useState([]);
   const [dataUser, setDataUser] = useState();
   const [statusLogin, setStautsLogin] = useState(null);
   const [data, setData] = useState();
@@ -87,6 +89,24 @@ const Context = (props) => {
     setModal(false);
   };
 
+  const loginGoogle = () => {
+    signInWithPopup(auth, new GoogleAuthProvider())
+      .then(() => {
+        () => {
+          // setAlert({ type: "success", message: "Sesión iniciada" });
+          alert("Sesión iniciada")
+          console.log("inicio con goole",alert);
+        };
+      })
+      .catch((err) => {
+        setAlert({
+          type: "error",
+          message: err.message,
+        });
+      });
+
+  };
+
   const estado = {
     modal,
     picture,
@@ -106,9 +126,9 @@ const Context = (props) => {
     getUser,
     setLoading,
     setAlert,
+    loginGoogle,
   };
 
-  // Agregar condición para mostrar la alerta
   return (
     <>
       {alert.type && (

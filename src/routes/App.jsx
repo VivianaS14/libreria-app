@@ -4,7 +4,7 @@ import Contenedor from "../containers/Contenedor";
 import Inicio from "../pages/Inicio/Inicio";
 import Intercambiar from "../pages/Intercambiar/Intercambiar";
 import Servicios from "../pages/Servicios/Servicios";
-import Perfil from "../pages/Perfil";
+import Perfil from "../pages/Perfil/Perfil";
 import NotFound from "../components/NotFound/NotFound";
 import "./App.scss";
 

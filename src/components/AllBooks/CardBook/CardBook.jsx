@@ -52,21 +52,6 @@ const CardBook = ({ nameBook, image, status, author, language,description }) => 
               }}
             >
               <Typography>Author: {author}</Typography>
-              {status ? (
-                <Typography>
-                  Estado:{" "}
-                  <Typography variant="span" sx={{ color: "#00FF00" }}>
-                    Disponible
-                  </Typography>
-                </Typography>
-              ) : (
-                <Typography>
-                  Estado:{" "}
-                  <Typography variant="span" sx={{ color: "#FF0000" }}>
-                    No disponible
-                  </Typography>
-                </Typography>
-              )}
               <Typography>Idioma: {language}</Typography>
               <Button
                 onClick={() => setModal(true)}

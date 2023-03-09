@@ -8,9 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [login, setLogin] = useState(true);
-  const { setPicture, setUser, createUser, loginUser,setAlert } =
-    useContext(DispatchAppContext);
-  const { user } = useContext(AppContext); //temporal mientras se crea la base de datos
+  const { user } = useContext(AppContext); 
+  const { setPicture, setUser, createUser, loginUser,loginGoogle,setAlert } =useContext(DispatchAppContext);
   const navigate = useNavigate();
 
   const handlerRegister = (e) => {
@@ -124,7 +123,7 @@ const Form = () => {
             {!login ? "Iniciar Sesión" : "Registrarse"}
           </span>
         </p>
-        <button className="Login__buttonGoogle">
+        <button onClick={loginGoogle} className="Login__buttonGoogle">
           Iniciar con
           <span className="Login__google">Google</span>
         </button>

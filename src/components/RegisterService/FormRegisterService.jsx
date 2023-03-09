@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 import InputForm from "../Login/InputForm/InputForm.jsx";
 import './FormRegisterService.scss';
 import {Button} from "@mui/material";
 import {useFormService} from './hooks/useFormService';
+import {theme} from "../../theme/theme.js";
+import {ThemeProvider} from "@mui/material/styles";
 
 const initialForm = {
     name_service: '',
@@ -48,9 +50,10 @@ const FormRegisterService = () => {
                     </div>}
                 </>
             </div>
-            <Button type="submit" variant="contained">Registrar servicio</Button>
+            <ThemeProvider theme={theme}>
+                <Button type="submit" variant="contained">Registrar servicio</Button>
+            </ThemeProvider>
         </form>
     );
-};
-
+}
 export default FormRegisterService;

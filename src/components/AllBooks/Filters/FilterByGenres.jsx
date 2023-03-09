@@ -2,8 +2,10 @@ import React from 'react';
 import {
     Accordion,
     AccordionDetails,
-    AccordionSummary, Checkbox,
-    FormControlLabel, FormGroup,
+    AccordionSummary,
+    FormControlLabel,
+    Radio,
+    RadioGroup,
     Typography
 } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -20,17 +22,18 @@ const FilterByGenres = () => {
                 <Typography>Generos </Typography>
             </AccordionSummary>
             <AccordionDetails sx={{overflowY: 'scroll', height: 200}}>
-                <FormGroup>
+                <RadioGroup>
                     {
                         categories.map(category => (
                             <FormControlLabel
+                                value={category.name_category}
                                 key={category.id}
-                                control={<Checkbox color="secondary" />}
+                                control={<Radio color="secondary" />}
                                 label={category.name_category}
                             />
                         ))
                     }
-                </FormGroup>
+                </RadioGroup>
             </AccordionDetails>
         </Accordion>
     );
