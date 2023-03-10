@@ -33,3 +33,29 @@ export const filterByAuthors = (state, action) => {
     return book.author === action.payload;
   });
 };
+
+export const orderByName = (state, action) => {
+  switch (action.payload) {
+    case 'A-Z':
+      state.copyAllBooks = state.allBooks.sort((a, b) => {
+        if (a.title > b.title)return 1
+        if (b.title > a.title) return -1
+        return 0
+      });
+      break;
+    case 'Z-A':
+      state.copyAllBooks = state.allBooks.sort((a, b) => {
+        if (a.title < b.title)return 1
+        if (b.title < a.title) return -1
+        return 0
+      });
+      break;
+    case 'reciente':
+      state.copyAllBooks = state.allBooks.sort((a, b) => {
+        return b.datePublish.slice(0, 4) - a.datePublish.slice(0, 4)
+      });
+      break;
+    default:
+      state.copyAllBooks = state.allBooks
+  }
+}

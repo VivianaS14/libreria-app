@@ -4,7 +4,7 @@ import {
   getBooksDate,
   filterByLenguaje,
   filterByGenre,
-  filterByAuthors,
+  filterByAuthors, orderByName,
 } from "../actions/action.books";
 
 const initialState = {
@@ -20,6 +20,7 @@ const bookSlices = createSlice({
     filterLanguage: filterByLenguaje,
     filterGenre: filterByGenre,
     filterAuthors: filterByAuthors,
+    orderName: orderByName
   },
 });
 export const {
@@ -28,5 +29,6 @@ export const {
   filterLanguage,
   filterGenre,
   filterAuthors,
+    orderName
 } = bookSlices.actions;
 export { bookSlices };
