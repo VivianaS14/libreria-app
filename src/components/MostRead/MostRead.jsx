@@ -50,7 +50,6 @@ const MostRead = () => {
               md={4}
               key={card.id}
             >
-              {console.log(card)}
               <CardMostRead
                 nameBook={card.title}
                 image={card.image}
