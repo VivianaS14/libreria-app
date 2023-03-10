@@ -52,8 +52,6 @@ export const orderByName = (state, action) => {
       break;
     case 'reciente':
       state.copyAllBooks = state.allBooks.sort((a, b) => {
-        // console.log(a.datePublish.slice(0, 4))
-        // console.log(b.datePublish.slice(0, 4))
         return b.datePublish.slice(0, 4) - a.datePublish.slice(0, 4)
       });
       break;
