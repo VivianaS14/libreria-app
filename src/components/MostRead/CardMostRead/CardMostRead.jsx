@@ -45,7 +45,7 @@ const CardMostRead = ({
         <Rating name="read-only" value={4} readOnly />
       </CardContent>
       <Button
-      sx={{margin:1}}
+      sx={{margin:1, backgroundColor:'#16794b'}}
         onClick={() => setModalDetails(true)}
         variant="contained"
         endIcon={<BookIcon />}

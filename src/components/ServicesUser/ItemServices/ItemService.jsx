@@ -54,7 +54,7 @@ const ItemService = ({ nameService, nameUser, phone, description }) => {
           </>
         )}
         {!statusLogin && (
-          <button className="btn btn-secondary " onClick={() => setModal(true)}>
+          <button className="btn btn-success" onClick={() => setModal(true)}>
             Inicia sesión para mas detalles
           </button>
         )}

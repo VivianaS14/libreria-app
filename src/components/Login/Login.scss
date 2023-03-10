@@ -34,7 +34,7 @@
     height: 80%;
     font-family: $font-family;
     display: grid;
-    overflow: scroll;
+    overflow-y: scroll;
 
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     background-color: rgb(237, 228, 213);
