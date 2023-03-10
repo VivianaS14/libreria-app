@@ -6,7 +6,7 @@ import "./Login.scss";
 
 const Login = () => {
   const { modal } = useContext(AppContext);
-  const { setModal, setPicture } = useContext(DispatchAppContext);
+  const { setModal } = useContext(DispatchAppContext);
 
   return (
     <>

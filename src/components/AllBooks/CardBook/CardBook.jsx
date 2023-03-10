@@ -14,7 +14,7 @@ import Details from "../../Details/Details";
 
 const CardBook = ({ nameBook, image, status, author, language,description,phoneNumber }) => {
   const [heart, setHeart] = React.useState(false);
-  const [modal, setModal] = useState(false);
+  const [modalDetails, setModalDetails] = useState(false);
 
   const handleChangue = () => {
     setHeart(!heart);
@@ -54,7 +54,7 @@ const CardBook = ({ nameBook, image, status, author, language,description,phoneN
               <Typography>Author: {author}</Typography>
               <Typography>Idioma: {language}</Typography>
               <Button
-                onClick={() => setModal(true)}
+                onClick={() => setModalDetails(true)}
                 variant="contained"
                 endIcon={<BookIcon />}
               >
@@ -70,7 +70,7 @@ const CardBook = ({ nameBook, image, status, author, language,description,phoneN
           />
         </Box>
       </Card>
-      {modal && (
+      {modalDetails && (
         <Details
           author={author}
           image={image}
@@ -78,7 +78,7 @@ const CardBook = ({ nameBook, image, status, author, language,description,phoneN
           nameBook={nameBook}
           description={description}
           status={status}
-          setModal={setModal}
+          setModalDetails={setModalDetails}
           phoneNumber={phoneNumber}
         />
       )}

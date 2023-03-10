@@ -22,7 +22,7 @@ const CardMostRead = ({
   phoneNumber,
 }) => {
 
-  const [modal, setModal] = useState(false);
+  const [modalDetails, setModalDetails] = useState(false);
   return (
     <Card sx={{ maxWidth: 300 }}>
       <CardMedia
@@ -46,13 +46,13 @@ const CardMostRead = ({
       </CardContent>
       <Button
       sx={{margin:1}}
-        onClick={() => setModal(true)}
+        onClick={() => setModalDetails(true)}
         variant="contained"
         endIcon={<BookIcon />}
       >
         Detalles
       </Button>
-      {modal && (
+      {modalDetails && (
         <Details
           author={author}
           image={image}
@@ -60,7 +60,7 @@ const CardMostRead = ({
           nameBook={nameBook}
           description={description}
           status={status}
-          setModal={setModal}
+          setModalDetails={setModalDetails}
           phoneNumber={phoneNumber}
         />
       )}

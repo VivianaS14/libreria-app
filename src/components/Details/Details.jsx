@@ -1,18 +1,25 @@
 import React, { useContext } from "react";
-import { AppContext } from "../../context/Context";
+import { AppContext, DispatchAppContext } from "../../context/Context";
 import "./Details.scss";
 
 const Details = ({
   nameBook,
   image,
-  status='',
+  status = "",
   author,
   description,
   language,
-  setModal,
+  setModalDetails,
   phoneNumber,
   ...props
 }) => {
+  const { statusLogin } = useContext(AppContext);
+  const {setModal}=useContext(DispatchAppContext);
+
+
+    
+  
+
   return (
     <div {...props} className="details">
       <div className="details__container">
@@ -22,20 +29,23 @@ const Details = ({
           <p>Autor: {author}</p>
           <p>{language}</p>
           <p className="details__description">{description}</p>
-          <div>
+          <div className="d-flex">
             <button
-              onClick={() => setModal(false)}
+              onClick={() => setModalDetails(false)}
               className="btn btn-danger me-2"
-            >
+              >
               Close
             </button>
-            <a
+            {statusLogin && (
+              <a
               className="btn btn-success"
               href={`https://wa.me/${phoneNumber}`}
               target="_blank"
-            >
-              Intercambiar
-            </a>
+              >
+                Intercambiar
+              </a>
+            )}
+            {!statusLogin && <button className="btn btn-success" onClick={()=>setModal(true)} >Inicia sesión</button>}
           </div>
         </div>
       </div>
