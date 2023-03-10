@@ -42,7 +42,7 @@ const CardMostRead = ({
           {nameBook}
         </Typography>
         <Typography variant="span">{author}</Typography>
-        <Rating name="read-only" value="4" readOnly />
+        <Rating name="read-only" value={4} readOnly />
       </CardContent>
       <Button
       sx={{margin:1}}
