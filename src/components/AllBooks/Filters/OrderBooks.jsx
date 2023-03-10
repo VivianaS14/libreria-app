@@ -1,11 +1,16 @@
 import React from 'react';
 import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 import {dataOrder} from '../utils/orderBooks';
+import {orderName} from '../../../redux/reducer/bookSlices';
+import {useDispatch} from "react-redux";
 const OrderBooks = () => {
-    const [order, setOrder] = React.useState('');
-    const handleChange = (event) => {
-        setOrder(event.target.value);
+    const dispatch = useDispatch()
+    const [valueOrder, setValueOrder] = React.useState('')
+    const handleChange = (e) => {
+        setValueOrder(e.target.value)
+        dispatch(orderName(e.target.value))
     };
+
     return (
         <React.Fragment>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -14,8 +19,8 @@ const OrderBooks = () => {
                     sx={{width: 180}}
                     color="secondary"
                     labelId="ordenar"
+                    value={valueOrder}
                     id="ordenar"
-                    value={order}
                     label="Ordenar por "
                     onChange={handleChange}
 
@@ -26,10 +31,10 @@ const OrderBooks = () => {
                     {
                         dataOrder.map(item => (
                             <MenuItem
-                                value={item}
-                                key={item}
+                                value={item.value}
+                                key={item.id}
                             >
-                                {item}
+                                {item.orderBy}
                             </MenuItem>
                         ))
                     }

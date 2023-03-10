@@ -10,6 +10,7 @@ import MenuIFilter from "./MenuDrawer/MenuIFilter.jsx";
 import { getBooks } from "../../redux/actions/action.books";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
+import SearchBook from "../SearchBook/SearchBook.jsx";
 
 const BooksMain = () => {
   const dispach = useDispatch();
@@ -21,7 +22,6 @@ const BooksMain = () => {
   const indexPrimerBook = indexByBooks - booksByPag;
   const currentBooks = dataBooks.slice(indexPrimerBook, indexByBooks);
   const paginado = (event, paginado) => {
-    console.log(paginado);
     setCurrentPag(paginado);
   };
   React.useEffect(() => {
@@ -45,7 +45,10 @@ const BooksMain = () => {
         }}
       >
         <MenuIFilter />
-        <OrderBooks />
+          <Box  sx={{display: 'flex', flexDirection: {xs: 'column', md:'row'}, alignItems: 'center'}}>
+              <SearchBook />
+              <OrderBooks />
+          </Box>
       </Box>
       <Box
         sx={{
