@@ -19,18 +19,16 @@ const BooksUser = () => {
 
   useEffect(() => {
     setUserBooks(dataBooks.filter((book) => book.userId === statusLogin.uid));
-    console.log(userBooks);
   }, [dataBooks]);
 
   return (
     <div className="BooksUser">
       <h2>Mis libros</h2>
-      <List
+      {/* <List
         sx={{
           width: "100%",
           maxWidth: 450,
           bgcolor: "#f4f1e8",
-          margin: "auto",
           display: "flex",
           flexWrap: "wrap",
         }}
@@ -40,7 +38,14 @@ const BooksUser = () => {
         ) : (
           <Loading />
         )}
-      </List>
+      </List> */}
+      <div className="BooksUser__container">
+        {userBooks.length >= 1 ? (
+          userBooks.map((book) => <BookItem book={book} />)
+        ) : (
+          <h3>No hay libros aun...</h3>
+        )}
+      </div>
     </div>
   );
 };

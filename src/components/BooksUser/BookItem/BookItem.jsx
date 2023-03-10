@@ -1,44 +1,42 @@
 import React from "react";
-import {
-  Divider,
-  ImageListItem,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Button, ListItem, ListItemText, Typography } from "@mui/material";
 
-const BookItem = () => {
+const BookItem = ({ book }) => {
+  const { author, image, title, description } = book;
+
   return (
     <>
       <ListItem>
         <div sx={{ marginRight: 3 }}>
           <img
-            src="https://m.media-amazon.com/images/P/B0BGFHKJP6.01._SCLZZZZZZZ_SX500_.jpg"
-            srcSet="https://m.media-amazon.com/images/P/B0BGFHKJP6.01._SCLZZZZZZZ_SX500_.jpg"
-            alt="Book title"
+            src={image}
+            srcSet={image}
+            alt={title}
             loading="lazy"
             width="180"
+            height="260"
           />
         </div>
         <ListItemText
           sx={{ fontFamily: "Radley, serif" }}
-          primary="Brunch this weekend?"
+          primary={title}
           secondary={
             <>
               <Typography
-                sx={{ display: "inline", marginTop: 2 }}
+                sx={{ marginTop: 2, display: "flex" }}
                 component="span"
                 variant="body2"
                 color="text.primary"
               >
-                Ali Connors
-              </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+                {author}
+              </Typography>{" "}
+              <Button variant="contained" color="error" sx={{ marginTop: 2 }}>
+                Eliminar
+              </Button>
             </>
           }
         />
       </ListItem>
-      <Divider variant="inset" component="li" />
     </>
   );
 };

@@ -9,6 +9,19 @@
     font-size: 35px;
   }
 
+  &__container {
+    width: 100%;
+    margin: 3rem 0;
+    background-color: #f4f1e8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    h3 {
+      margin: 3rem 0;
+      color: #747373;
+    }
+  }
+
   .MuiTypography-root {
     font-family: "Radley", serif !important;
     margin-top: 0.5rem;
@@ -17,5 +30,20 @@
 
   img {
     margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .BooksUser__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 281px) {
+  .BooksUser__container {
+    img {
+      width: 100px;
+      height: 190px;
+    }
   }
 }
