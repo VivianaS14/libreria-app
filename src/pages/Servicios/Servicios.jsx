@@ -3,11 +3,12 @@ import { Box } from "@mui/material";
 import "./Servicios.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getServicesUser } from "../../redux/actions/action.service";
-import { AppContext } from "../../context/Context";
+import { AppContext, DispatchAppContext } from "../../context/Context";
 const Servicios = () => {
   const servicesOfUsers = useSelector((state) => state.services.allServices);
   const dispatch = useDispatch();
   const { statusLogin } = useContext(AppContext);
+  const {setModal}= useContext(DispatchAppContext)
 
   React.useEffect(() => {
     dispatch(getServicesUser());
