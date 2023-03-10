@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import CardMostRead from "./CardMostRead/CardMostRead";
@@ -6,12 +6,14 @@ import { getBooks } from "../../redux/actions/action.books";
 import { useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import "./MostRead.scss";
+import { DispatchAppContext } from "../../context/Context";
 
 const MostRead = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const dataBooks = useSelector((state) => state.books.allBooks);
   const [mostRead, setMostRead] = useState([]);
+  
 
   useEffect(() => {
     dispatch(getBooks());
@@ -20,7 +22,6 @@ const MostRead = () => {
   useEffect(() => {
     setMostRead(dataBooks.slice(1, 7));
   }, [dataBooks]);
-
   return (
     <Container
       maxWidth="xl"
@@ -49,11 +50,16 @@ const MostRead = () => {
               md={4}
               key={card.id}
             >
+              {console.log(card)}
               <CardMostRead
                 nameBook={card.title}
                 image={card.image}
                 score={card.score}
                 author={card.author}
+                state={card.state}
+                description={card.description}
+                languages={card.languages}
+                phoneNumber={card.phone}
               />
             </Grid>
           ))

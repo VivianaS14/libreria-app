@@ -5,7 +5,7 @@ import "./Details.scss";
 const Details = ({
   nameBook,
   image,
-  status,
+  status='',
   author,
   description,
   language,
@@ -13,7 +13,6 @@ const Details = ({
   phoneNumber,
   ...props
 }) => {
-
   return (
     <div {...props} className="details">
       <div className="details__container">
@@ -30,9 +29,14 @@ const Details = ({
             >
               Close
             </button>
-            <a className="btn btn-success" href={`https://wa.me/${phoneNumber}`} target='_blank'>Intercambiar</a>
+            <a
+              className="btn btn-success"
+              href={`https://wa.me/${phoneNumber}`}
+              target="_blank"
+            >
+              Intercambiar
+            </a>
           </div>
-           
         </div>
       </div>
     </div>
