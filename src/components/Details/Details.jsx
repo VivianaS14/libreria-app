@@ -45,7 +45,7 @@ const Details = ({
                 Intercambiar
               </a>
             )}
-            {!statusLogin && <button className="btn btn-success" onClick={()=>setModal(true)} >Inicia sesión</button>}
+            {!statusLogin && <button className="btn btn-info" onClick={()=>setModal(true)} >Inicia sesión</button>}
           </div>
         </div>
       </div>

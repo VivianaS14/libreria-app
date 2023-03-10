@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, CardContent, Typography } from "@mui/material";
+import { AppContext, DispatchAppContext } from "../../../context/Context";
 
 const ItemService = ({ nameService, nameUser, phone, description }) => {
+  const { statusLogin } = useContext(AppContext);
+  const { setModal } = useContext(DispatchAppContext);
+
   return (
     <Box sx={{ m: 2, fontFamily: "Radley, serif" }}>
       <Typography
@@ -39,12 +43,21 @@ const ItemService = ({ nameService, nameUser, phone, description }) => {
           mt: 3,
         }}
       >
-        <Typography variant="span" sx={{ color: "#efefef" }}>
-          {nameUser}
-        </Typography>
-        <Typography variant="span" sx={{ color: "#efefef" }}>
-          {phone}
-        </Typography>
+        {statusLogin && (
+          <>
+            <Typography variant="span" sx={{ color: "#efefef" }}>
+              {nameUser}
+            </Typography>
+            <Typography variant="span" sx={{ color: "#efefef" }}>
+              {phone}
+            </Typography>
+          </>
+        )}
+        {!statusLogin && (
+          <button className="btn btn-secondary " onClick={() => setModal(true)}>
+            Inicia sesión para mas detalles
+          </button>
+        )}
       </Box>
     </Box>
   );
