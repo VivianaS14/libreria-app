@@ -3,6 +3,7 @@ import User from "../../components/User/User";
 import BtnRegisterBook from "../../components/RegisterBook/BtnRegisterBook.jsx";
 import FormRegisterBook from "../../components/RegisterBook/FormRegisterBook";
 import FormRegisterService from "../../components/RegisterService/FormRegisterService.jsx";
+import BooksUser from "../../components/BooksUser/BooksUser";
 import "./Perfil.scss";
 
 const Perfil = () => {
@@ -28,6 +29,7 @@ const Perfil = () => {
             <BtnRegisterBook textTitle="Registrar Eventos" />
           </Grid> */}
       </div>
+      <BooksUser />
     </div>
   );
 };

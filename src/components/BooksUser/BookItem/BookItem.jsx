@@ -11,14 +11,15 @@ const BookItem = () => {
   return (
     <>
       <ListItem>
-        <ImageListItem sx={{ marginRight: 3 }}>
+        <div sx={{ marginRight: 3 }}>
           <img
             src="https://m.media-amazon.com/images/P/B0BGFHKJP6.01._SCLZZZZZZZ_SX500_.jpg"
             srcSet="https://m.media-amazon.com/images/P/B0BGFHKJP6.01._SCLZZZZZZZ_SX500_.jpg"
             alt="Book title"
             loading="lazy"
+            width="180"
           />
-        </ImageListItem>
+        </div>
         <ListItemText
           sx={{ fontFamily: "Radley, serif" }}
           primary="Brunch this weekend?"

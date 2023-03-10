@@ -40,14 +40,14 @@ const User = () => {
   return (
     <div className="d-flex justify-content-around flex-wrap  align-items-center  border p-5 m-5 position-relative">
       <img
-        style={{ width: "200px", borderRadius:12 }}
+        style={{ width: "200px", borderRadius: 12 }}
         src={picture ? picture : photoURL}
         alt=""
       />
       <div className="text-center mt-5" style={{ fontFamily: "Radley, serif" }}>
         <h1> {fullName ? fullName : displayName}</h1>
         <p>{email ? email : "Emial"}</p>
-        <p>Celular {phone? phone:"Celular"}</p>
+        <p>Celular {phone ? phone : "Celular"}</p>
       </div>
     </div>
   );

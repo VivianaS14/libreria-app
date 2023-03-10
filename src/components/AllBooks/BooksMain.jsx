@@ -7,14 +7,13 @@ import FilterByLenguajes from "./Filters/FilterByLenguajes.jsx";
 import FilterByAuthors from "./Filters/FilterByAuthors.jsx";
 import OrderBooks from "./Filters/OrderBooks.jsx";
 import MenuIFilter from "./MenuDrawer/MenuIFilter.jsx";
-import {getBooks} from '../../redux/actions/action.books'
-import {useDispatch, useSelector} from "react-redux";
-import Loading from "../Loading/Loading"
+import { getBooks } from "../../redux/actions/action.books";
+import { useDispatch, useSelector } from "react-redux";
+import Loading from "../Loading/Loading";
 
 const BooksMain = () => {
-
-    const dispach = useDispatch();
-    const dataBooks = useSelector(state => state.books.copyAllBooks)
+  const dispach = useDispatch();
+  const dataBooks = useSelector((state) => state.books.copyAllBooks);
 
   const [currentPag, setCurrentPag] = React.useState(1);
   const [booksByPag] = React.useState(6);
@@ -22,12 +21,12 @@ const BooksMain = () => {
   const indexPrimerBook = indexByBooks - booksByPag;
   const currentBooks = dataBooks.slice(indexPrimerBook, indexByBooks);
   const paginado = (event, paginado) => {
-      console.log(paginado)
+    console.log(paginado);
     setCurrentPag(paginado);
   };
   React.useEffect(() => {
-    dispach(getBooks())
-  },[])
+    dispach(getBooks());
+  }, []);
   return (
     <React.Fragment>
       <h2>Intercambia y Disfruta</h2>
@@ -69,8 +68,8 @@ const BooksMain = () => {
             Filtrar por:{" "}
           </Typography>
           <FilterByGenres setPaginado={setCurrentPag} />
-          <FilterByLenguajes setPaginado={setCurrentPag}/>
-          <FilterByAuthors setPaginado={setCurrentPag}/>
+          <FilterByLenguajes setPaginado={setCurrentPag} />
+          <FilterByAuthors setPaginado={setCurrentPag} />
         </Box>
 
         <Container maxWidth="lg">
@@ -79,33 +78,39 @@ const BooksMain = () => {
             container
             columns={{ xs: 2, sm: 2, md: 8, lg: 12 }}
           >
-            {currentBooks.length >=1 ?currentBooks.map((book) => (
-              <Grid
-                item
-                sx={{ mb: 2, pl: 1 }}
-                xs={2}
-                sm={4}
-                md={4}
-                key={book.id}
-              >
-                <CardBook
-                  nameBook={book.title}
-                  image={book.image}
-                  author={book.author}
-                  status={book.status}
-                  language={book.idioma}
-                  description={book.description}
-                  phoneNumber={book.phone}
-                />
-              </Grid>
-            ))
-            :<Loading/>
-            }
+            {currentBooks.length >= 1 ? (
+              currentBooks.map((book) => (
+                <Grid
+                  item
+                  sx={{ mb: 2, pl: 1 }}
+                  xs={2}
+                  sm={4}
+                  md={4}
+                  key={book.id}
+                >
+                  <CardBook
+                    nameBook={book.title}
+                    image={book.image}
+                    author={book.author}
+                    status={book.status}
+                    language={book.idioma}
+                    description={book.description}
+                    phoneNumber={book.phone}
+                  />
+                </Grid>
+              ))
+            ) : (
+              <Loading />
+            )}
           </Grid>
         </Container>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
-          <Paginated booksByPage={booksByPag} books={dataBooks} paginado={paginado} />
+        <Paginated
+          booksByPage={booksByPag}
+          books={dataBooks}
+          paginado={paginado}
+        />
       </Box>
     </React.Fragment>
   );
