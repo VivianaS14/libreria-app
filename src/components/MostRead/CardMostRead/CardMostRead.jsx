@@ -6,12 +6,12 @@ import {
   Rating,
   Typography,
 } from "@mui/material";
-const CardMostRead = ({ nameBook, image, score }) => {
+const CardMostRead = ({ nameBook, image, score, author }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300 }}>
       <CardMedia
         component="img"
-        height="200"
+        height="280"
         image={image}
         sx={{ objectFit: "fill" }}
       />
@@ -22,8 +22,11 @@ const CardMostRead = ({ nameBook, image, score }) => {
           fontFamily: "Radley, serif",
         }}
       >
-        <Typography variant="span">{nameBook}</Typography>
-        <Rating name="read-only" value={score} readOnly />
+        <Typography variant="span" sx={{ fontSize: 20, color: "#9b4819" }}>
+          {nameBook}
+        </Typography>
+        <Typography variant="span">{author}</Typography>
+        <Rating name="read-only" value="4" readOnly />
       </CardContent>
     </Card>
   );

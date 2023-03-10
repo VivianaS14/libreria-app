@@ -24,21 +24,6 @@ const BooksUser = () => {
   return (
     <div className="BooksUser">
       <h2>Mis libros</h2>
-      {/* <List
-        sx={{
-          width: "100%",
-          maxWidth: 450,
-          bgcolor: "#f4f1e8",
-          display: "flex",
-          flexWrap: "wrap",
-        }}
-      >
-        {userBooks.length >= 1 ? (
-          userBooks.map((book) => <BookItem book={book} />)
-        ) : (
-          <Loading />
-        )}
-      </List> */}
       <div className="BooksUser__container">
         {userBooks.length >= 1 ? (
           userBooks.map((book) => <BookItem book={book} />)
