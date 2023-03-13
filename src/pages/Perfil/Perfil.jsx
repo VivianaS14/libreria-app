@@ -12,8 +12,7 @@ const Perfil = () => {
   const { statusLogin } = useContext(AppContext);
   const navigate = useNavigate()
 
-
-  if (!statusLogin) return <h1>Inicie sesion para navegar</h1> ;
+  if (!statusLogin) return <h1>Inicie sesión para navegar</h1> ;
 
   return (
     <div className="Perfil">

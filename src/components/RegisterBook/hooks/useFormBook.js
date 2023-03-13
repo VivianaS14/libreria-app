@@ -2,21 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import { addOneBook } from "../../../redux/reducer/bookSlices.js";
 import { useDispatch } from "react-redux";
 import { DispatchAppContext } from "../../../context/Context.jsx";
+import { getBooks } from "../../../redux/actions/action.books.js";
 
-export const useFormBook = (form, statusLogin,data) => {
-
-  
-
-  const [numberPhone, setNumberPhone] =useState('')
+export const useFormBook = (form, statusLogin, data) => {
+  const [numberPhone, setNumberPhone] = useState("");
 
   useEffect(() => {
-    setNumberPhone(data?.phone ? data.phone : "")
-  },[data])
- 
-  const handlerPhone= (e)=>{
-     setNumberPhone(e.target.value)
-  }
+    setNumberPhone(data?.phone ? data.phone : "");
+  }, [data]);
 
+  const handlerPhone = (e) => {
+    setNumberPhone(e.target.value);
+  };
 
   const { setAlert } = useContext(DispatchAppContext);
 
@@ -45,13 +42,13 @@ export const useFormBook = (form, statusLogin,data) => {
       errors.author = "Debes ingresar el autor del libro";
     }
     if (!formData.get("datePublish").trim()) {
-      errors.datePublish = "Debes ingresar la fecha de publicacion";
+      errors.datePublish = "Debes ingresar la fecha de publicación";
     }
     if (!formData.get("description").trim()) {
-      errors.description = "Debes ingresar una descripcion";
+      errors.description = "Debes ingresar una descripción";
     }
     if (genres.length === 0) {
-      errors.genres = "Debes ingresar minimo un genero";
+      errors.genres = "Debes seleccionar un genero";
     }
     if (Object.keys(errors).length === 0) {
       const book = {
@@ -70,6 +67,7 @@ export const useFormBook = (form, statusLogin,data) => {
       genres = [];
       form.current.reset();
       setAlert({ type: "info", message: "Libro registrado" });
+      dispatch(getBooks());
     } else {
       setErrors(errors);
     }
