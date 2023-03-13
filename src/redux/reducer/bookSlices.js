@@ -7,6 +7,7 @@ import {
   filterByAuthors,
   orderByName,
   deleteBooks,
+  searchByName,
 } from "../actions/action.books";
 
 const initialState = {
@@ -24,6 +25,7 @@ const bookSlices = createSlice({
     filterAuthors: filterByAuthors,
     orderName: orderByName,
     deleteBook: deleteBooks,
+    searchBook: searchByName,
   },
 });
 export const {
@@ -34,5 +36,6 @@ export const {
   filterAuthors,
   orderName,
   deleteBook,
+  searchBook,
 } = bookSlices.actions;
 export { bookSlices };

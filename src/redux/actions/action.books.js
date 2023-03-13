@@ -34,7 +34,6 @@ export const filterByAuthors = (state, action) => {
     return book.author === action.payload;
   });
 };
-
 export const orderByName = (state, action) => {
   switch (action.payload) {
     case "A-Z":
@@ -62,4 +61,9 @@ export const orderByName = (state, action) => {
 };
 export const deleteBooks = (state, action) => {
   deleteBook(action.payload);
+};
+export const searchByName = (state, action) => {
+  state.copyAllBooks = state.allBooks.filter((book) => {
+    return book.title.toLowerCase().includes(action.payload.toLowerCase());
+  });
 };
