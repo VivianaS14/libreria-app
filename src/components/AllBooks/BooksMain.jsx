@@ -24,6 +24,7 @@ const BooksMain = () => {
   const paginado = (event, paginado) => {
     setCurrentPag(paginado);
   };
+
   React.useEffect(() => {
     dispach(getBooks());
   }, []);
