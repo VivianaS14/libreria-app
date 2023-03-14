@@ -21,7 +21,7 @@ const Service = () => {
     <Box
       sx={{
         backgroundColor: "#314028",
-        height: 580,
+        height: 650,
         pl: 7,
         pr: 7,
       }}
