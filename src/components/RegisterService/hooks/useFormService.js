@@ -3,6 +3,7 @@ import { addServices } from "../../../redux/reducer/serviceSlices";
 import { useDispatch } from "react-redux";
 import { AppContext, DispatchAppContext } from "../../../context/Context.jsx";
 import { getUserService } from "../../../services/getDataFiretore/getAllService.js";
+import { getServicesUser } from "../../../redux/actions/action.service";
 export const useFormService = (initilaValue, validation) => {
   const { statusLogin } = useContext(AppContext);
   const { setAlert } = useContext(DispatchAppContext);
@@ -35,6 +36,7 @@ export const useFormService = (initilaValue, validation) => {
         description: "",
       });
       setAlert({ type: "success", message: "Servicio Añadido" });
+      dispatch(getServicesUser());
     }
   };
   return {

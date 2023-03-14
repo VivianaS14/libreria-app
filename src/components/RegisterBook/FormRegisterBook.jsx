@@ -116,7 +116,7 @@ const FormRegisterBook = () => {
         </div>
         <div className="date-description">
           <div className="select-options">
-            <label>Selecciona el genero:</label>
+            <label>Selecciona el género:</label>
             <select onChange={handleChange} className="select-genres">
               <option disabled>Géneros</option>
               {categories.map((item) => (

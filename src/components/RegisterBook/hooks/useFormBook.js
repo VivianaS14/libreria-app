@@ -24,14 +24,16 @@ export const useFormBook = (form, statusLogin, data) => {
     setRadio(event.target.value);
   };
   const [errors, setErrors] = React.useState({});
-  let genres = [];
+  const [genres, setGenres] = useState("");
   const handleChange = (e) => {
-    genres = [...genres, e.target.value];
+    setGenres(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(form.current);
     const errors = {};
+    console.log(genres);
+
     if (!formData.get("title").trim()) {
       errors.title = "Debes ingresar el nombre del libro";
     }
@@ -48,7 +50,7 @@ export const useFormBook = (form, statusLogin, data) => {
       errors.description = "Debes ingresar una descripción";
     }
     if (genres.length === 0) {
-      errors.genres = "Debes seleccionar un genero";
+      errors.genres = "Debes seleccionar un género";
     }
     if (Object.keys(errors).length === 0) {
       const book = {
@@ -64,7 +66,7 @@ export const useFormBook = (form, statusLogin, data) => {
         userId: statusLogin.uid,
       };
       dispatch(addOneBook(book));
-      genres = [];
+      setGenres("");
       form.current.reset();
       setAlert({ type: "info", message: "Libro registrado" });
       dispatch(getBooks());
