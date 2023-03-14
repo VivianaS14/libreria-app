@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
+import { Button } from "@mui/material";
 import { AppContext, DispatchAppContext } from "../../context/Context";
 import "./Details.scss";
+import { WhatsApp } from "@mui/icons-material";
 
 const Details = ({
   nameBook,
@@ -14,11 +16,7 @@ const Details = ({
   ...props
 }) => {
   const { statusLogin } = useContext(AppContext);
-  const {setModal}=useContext(DispatchAppContext);
-
-
-    
-  
+  const { setModal } = useContext(DispatchAppContext);
 
   return (
     <div {...props} className="details">
@@ -30,22 +28,52 @@ const Details = ({
           <p>{language}</p>
           <p className="details__description">{description}</p>
           <div className="d-flex">
-            <button
+            <Button
               onClick={() => setModalDetails(false)}
-              className="btn btn-danger me-2"
-              >
+              variant="contained"
+              color="error"
+              sx={{
+                fontFamily: "Radley, serif",
+                color: "#fff",
+                pl: 3,
+                pr: 3,
+                mr: 2,
+              }}
+            >
               Close
-            </button>
+            </Button>
             {statusLogin && (
-              <a
-              className="btn btn-success"
-              href={`https://wa.me/${phoneNumber}`}
-              target="_blank"
+              <Button
+                variant="contained"
+                color="success"
+                sx={{
+                  fontFamily: "Radley, serif",
+                  color: "#fff",
+                  pl: 3,
+                  pr: 3,
+                }}
+                endIcon={<WhatsApp />}
               >
-                Intercambiar
-              </a>
+                <a href={`https://wa.me/${phoneNumber}`} target="_blank">
+                  Intercambiar
+                </a>
+              </Button>
             )}
-            {!statusLogin && <button className="btn btn-success" onClick={()=>setModal(true)} >Inicia sesión</button>}
+            {!statusLogin && (
+              <Button
+                onClick={() => setModal(true)}
+                variant="contained"
+                color="success"
+                sx={{
+                  fontFamily: "Radley, serif",
+                  color: "#fff",
+                  pl: 3,
+                  pr: 3,
+                }}
+              >
+                Inicia sesión
+              </Button>
+            )}
           </div>
         </div>
       </div>
