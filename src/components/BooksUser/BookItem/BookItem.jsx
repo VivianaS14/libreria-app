@@ -7,14 +7,14 @@ import { getBooks } from "../../../redux/actions/action.books";
 
 const BookItem = ({ book }) => {
   const { author, image, title, description, id } = book;
-  const { setAlert } = useContext(DispatchAppContext)
+  const { setAlert } = useContext(DispatchAppContext);
   const dispatch = useDispatch();
 
-  const handelDelete = () => {
-    dispatch(deleteBook(id))
+  const handleDelete = () => {
+    dispatch(deleteBook(id));
     setAlert({ type: "success", message: "Libro Eliminado" });
-    dispatch(getBooks())
-  }
+    dispatch(getBooks());
+  };
 
   return (
     <>
@@ -42,7 +42,12 @@ const BookItem = ({ book }) => {
               >
                 {author}
               </Typography>{" "}
-              <Button variant="contained" color="error" sx={{ marginTop: 2 }} onClick={handelDelete}>
+              <Button
+                variant="contained"
+                color="error"
+                sx={{ marginTop: 2 }}
+                onClick={handleDelete}
+              >
                 Eliminar
               </Button>
             </>
