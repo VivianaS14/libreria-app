@@ -23,6 +23,29 @@ const Context = (props) => {
   const [loading, setLoading] = useState(true);
   const [alert, setAlert] = useState({});
 
+  const editUser = ({ ...props }) => {
+    const userId = props.id;
+    console.log(props);
+    const userRef = firebase.firestore().collection("users").doc(userId);
+    userRef
+      .update({
+        fullName,
+        phone,
+        address,
+        city,
+        picture,
+      })
+      .then(() => {
+        setAlert({
+          type: "success",
+          message: "Usuario actualizado correctamente",
+        });
+      })
+      .catch((error) => {
+        setAlert({ type: "error", message: error.message });
+      });
+  };
+
   const getUser = () => {
     if (statusLogin !== null) {
       const rest = dataUser?.find((user) => user.email === statusLogin.email);
@@ -125,6 +148,7 @@ const Context = (props) => {
     setLoading,
     setAlert,
     loginGoogle,
+    editUser,
   };
 
   return (

@@ -1,10 +1,14 @@
+import { Button } from "bootstrap";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext, DispatchAppContext } from "../../context/Context";
 
 import Loading from "../Loading/Loading";
+import InputForm from "../Login/InputForm/InputForm";
+import UpdateInfo from "./UpdateInfo";
 
 const User = () => {
+  const [editState, setEditState] = useState(false);
   const { statusLogin, data, loading } = useContext(AppContext);
   const { getUser } = useContext(DispatchAppContext);
   const navigate = useNavigate();
@@ -47,7 +51,20 @@ const User = () => {
       <div className="text-center mt-5" style={{ fontFamily: "Radley, serif" }}>
         <h1> {fullName ? fullName : displayName}</h1>
         <p>{email ? email : "Emial"}</p>
+        <p>Ciudad: {city ? city : "Ciudad"}</p>
+        <p>Direccion: {address ? address : "Direccion"}</p>
         <p>Celular {phone ? phone : "Celular"}</p>
+        {!editState && <button onClick={()=>setEditState(true)} className="btn btn-success">Editar perfil</button>}
+        {editState && fullName && (
+          <UpdateInfo
+            fullName={fullName}
+            phone={phone}
+            address={address}
+            city={city}
+            id={data.id}
+            setEditState={setEditState}
+          />
+        )}
       </div>
     </div>
   );
