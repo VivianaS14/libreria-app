@@ -49,9 +49,9 @@ const User = () => {
       />
       <div className="text-center mt-5" style={{ fontFamily: "Radley, serif" }}>
         <h1> {fullName ? fullName : displayName}</h1>
-        <p>{email ? email : "Emial"}</p>
+        <p>{email ? email : "Email"}</p>
         <p>Ciudad: {city ? city : "Ciudad"}</p>
-        <p>Direccion: {address ? address : "Direccion"}</p>
+        <p>Dirección: {address ? address : "Dirección"}</p>
         <p>Celular {phone ? phone : "Celular"}</p>
         {!editState && !displayName && (
           <button

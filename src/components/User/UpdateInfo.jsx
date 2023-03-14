@@ -58,7 +58,7 @@ const UpdateInfo = ({
         required
         onChange={(e) => handlerChange(e)}
         name="city"
-        placeholder="ciudad"
+        placeholder="Ciudad"
         type="text"
         value={infoUser.city}
       />
