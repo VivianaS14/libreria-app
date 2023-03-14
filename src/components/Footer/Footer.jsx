@@ -27,14 +27,14 @@ const Footer = () => {
         <div className="content__contacto">
           <EmailRounded sx={{ fontSize: 30, padding: 1 }} />
           <div className="">
-            <p>Correo ELectronico:</p>
+            <p>Correo Electrónico:</p>
             <p>hello@tripleaaa.com</p>
           </div>
         </div>
         <div className="content__contacto">
           <PhoneRounded sx={{ fontSize: 30, padding: 1 }} />
           <div className="">
-            <p>Telefono:</p>
+            <p>Teléfono:</p>
             <p>(305) 456 7890</p>
           </div>
         </div>
