@@ -4,7 +4,13 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
-import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  onSnapshot,
+  updateDoc,
+} from "firebase/firestore";
 import React, { createContext, useEffect, useState } from "react";
 import { auth, db } from "../firebase/firebase";
 import userDefault from "../components/Login/img/user.svg";
@@ -25,16 +31,15 @@ const Context = (props) => {
 
   const editUser = ({ ...props }) => {
     const userId = props.id;
-    console.log(props);
-    const userRef = firebase.firestore().collection("users").doc(userId);
-    userRef
-      .update({
-        fullName,
-        phone,
-        address,
-        city,
-        picture,
-      })
+    const userRef = doc(db, "users", userId);
+
+    updateDoc(userRef, {
+      fullName: props.fullName,
+      phone: props.phone,
+      address: props.address,
+      city: props.city,
+      picture: picture ? picture : props.photo,
+    })
       .then(() => {
         setAlert({
           type: "success",

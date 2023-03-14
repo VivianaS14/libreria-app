@@ -4,8 +4,16 @@ import InputForm from "../Login/InputForm/InputForm";
 import PhotoUser from "../Login/PhotoUser/PhotoUser";
 import UploadPhoto from "../Login/UploadPhoto/UploadPhoto";
 
-const UpdateInfo = ({ fullName, phone, address,setEditState,id }) => {
-  const initialState = { fullName, phone, address,id };
+const UpdateInfo = ({
+  fullName,
+  phone,
+  address,
+  setEditState,
+  id,
+  city,
+  photo,
+}) => {
+  const initialState = { fullName, phone, address, id, city, photo };
 
   const [infoUser, setInfoUser] = useState(initialState);
   const { setPicture, setAlert, editUser } = useContext(DispatchAppContext);
@@ -28,53 +36,58 @@ const UpdateInfo = ({ fullName, phone, address,setEditState,id }) => {
   };
 
   return (
-      <>
-        <InputForm
-          required
-          onChange={(e) => handlerChange(e)}
-          name="fullName"
-          placeholder="Nombre y apellido"
-          type="text"
-          value={infoUser.fullName}
-        />
+    <>
+      <InputForm
+        required
+        onChange={(e) => handlerChange(e)}
+        name="fullName"
+        placeholder="Nombre y apellido"
+        type="text"
+        value={infoUser.fullName}
+      />
 
-        <InputForm
-          required
-          onChange={(e) => handlerChange(e)}
-          name="address"
-          placeholder="Direccción"
-          type="text"
-          value={infoUser.address}
-        />
-        <InputForm
-          required
-          onChange={(e) => handlerChange(e)}
-          name="city"
-          placeholder="ciudad"
-          type="text"
-          value={infoUser.city}
-        />
-        <InputForm
-          required
-          onChange={(e) => handlerChange(e)}
-          name="phone"
-          placeholder="Celular"
-          type="number"
-          minLength="10"
-          value={infoUser.phone}
-        />
+      <InputForm
+        required
+        onChange={(e) => handlerChange(e)}
+        name="address"
+        placeholder="Direccción"
+        type="text"
+        value={infoUser.address}
+      />
+      <InputForm
+        required
+        onChange={(e) => handlerChange(e)}
+        name="city"
+        placeholder="ciudad"
+        type="text"
+        value={infoUser.city}
+      />
+      <InputForm
+        required
+        onChange={(e) => handlerChange(e)}
+        name="phone"
+        placeholder="Celular"
+        type="number"
+        minLength="10"
+        value={infoUser.phone}
+      />
 
-        <PhotoUser />
-        <UploadPhoto onChange={mostrarImagen} />
-        <button
-          onClick={() => editUser(infoUser)}
-          type="submit"
-          className="Login__button"
-        >
-          Guardar cambios
-        </button>
-        <button onClick={()=>setEditState(false)} className='btn btn-danger'>Cerrar</button>
-      </>
+      <PhotoUser />
+      <UploadPhoto onChange={mostrarImagen} />
+      <button
+        onClick={() => {
+          editUser(infoUser);
+          setEditState(false);
+        }}
+        type="submit"
+        className="Login__button"
+      >
+        Guardar cambios
+      </button>
+      <button onClick={() => setEditState(false)} className="btn btn-danger">
+        Cerrar
+      </button>
+    </>
   );
 };
 

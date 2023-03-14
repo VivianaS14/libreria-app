@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { AppContext, DispatchAppContext } from "../../context/Context";
 
 import Loading from "../Loading/Loading";
-import InputForm from "../Login/InputForm/InputForm";
 import UpdateInfo from "./UpdateInfo";
 
 const User = () => {
@@ -54,9 +53,17 @@ const User = () => {
         <p>Ciudad: {city ? city : "Ciudad"}</p>
         <p>Direccion: {address ? address : "Direccion"}</p>
         <p>Celular {phone ? phone : "Celular"}</p>
-        {!editState && <button onClick={()=>setEditState(true)} className="btn btn-success">Editar perfil</button>}
+        {!editState && !displayName && (
+          <button
+            onClick={() => setEditState(true)}
+            className="btn btn-success"
+          >
+            Editar perfil
+          </button>
+        )}
         {editState && fullName && (
           <UpdateInfo
+            photo={picture ? picture : photoURL}
             fullName={fullName}
             phone={phone}
             address={address}
