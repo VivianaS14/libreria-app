@@ -4,6 +4,8 @@ import InputForm from "../Login/InputForm/InputForm";
 import PhotoUser from "../Login/PhotoUser/PhotoUser";
 import UploadPhoto from "../Login/UploadPhoto/UploadPhoto";
 
+import './Update.scss'
+
 const UpdateInfo = ({
   fullName,
   phone,
@@ -36,7 +38,7 @@ const UpdateInfo = ({
   };
 
   return (
-    <>
+    <div className='updateInfo'>
       <InputForm
         required
         onChange={(e) => handlerChange(e)}
@@ -87,7 +89,7 @@ const UpdateInfo = ({
       <button onClick={() => setEditState(false)} className="btn btn-danger">
         Cerrar
       </button>
-    </>
+    </div>
   );
 };
 
