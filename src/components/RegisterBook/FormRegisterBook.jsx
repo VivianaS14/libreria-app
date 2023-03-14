@@ -58,6 +58,7 @@ const FormRegisterBook = () => {
           </>
           <>
             <InputForm
+            type='number'
               placeholder="Número de celular"
               name="phone"
               onChange={(e) => handlerPhone(e)}
