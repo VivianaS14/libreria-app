@@ -15,6 +15,11 @@
     background-color: #f4f1e8;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    h3 {
+      margin: 3rem 0;
+      color: #747373;
+    }
   }
 
   h4 {

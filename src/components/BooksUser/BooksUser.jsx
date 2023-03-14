@@ -26,7 +26,7 @@ const BooksUser = () => {
         {userBooks.length >= 1 ? (
           userBooks.map((book) => <BookItem key={book.id} book={book} />)
         ) : (
-          <h3>No hay libros aun...</h3>
+          <h3>No tienes libros aún.</h3>
         )}
       </div>
     </div>

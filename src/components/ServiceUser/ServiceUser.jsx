@@ -30,7 +30,7 @@ const ServiceUser = () => {
             <ServiceItem key={service.id} service={service} />
           ))
         ) : (
-          <h3>No tienes servicios...</h3>
+          <h3>No tienes servicios.</h3>
         )}
       </div>
     </div>
