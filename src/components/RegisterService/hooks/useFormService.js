@@ -1,16 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { addServices } from "../../../redux/reducer/serviceSlices";
 import { useDispatch } from "react-redux";
 import { AppContext, DispatchAppContext } from "../../../context/Context.jsx";
 import { getUserService } from "../../../services/getDataFiretore/getAllService.js";
 import { getServicesUser } from "../../../redux/actions/action.service";
-export const useFormService = (initilaValue, validation) => {
-  const { statusLogin } = useContext(AppContext);
+
+export const useFormService = (initialValue, validation) => {
+  const { statusLogin, data } = useContext(AppContext);
   const { setAlert } = useContext(DispatchAppContext);
-  const [formService, setFormService] = React.useState(initilaValue);
+  const [formService, setFormService] = React.useState(initialValue);
+  const [phoneNumber, setPhoneNumber] = React.useState("");
+
+  useEffect(() => {
+    setPhoneNumber(data?.phone ? data.phone : "");
+  }, [data]);
+
+  const handlePhoneNumber = (e) => {
+    setPhoneNumber(e.target.value);
+  };
+
   let user = {};
   const prueba = async () => {
-    const userRegister = await getUserService(statusLogin);
+    const userRegister = await getUserService(statusLogin, phoneNumber);
     user.fullName = userRegister.fullName;
     user.phone = userRegister.phone;
   };
@@ -24,11 +35,11 @@ export const useFormService = (initilaValue, validation) => {
       [e.target.name]: e.target.value,
       userId: statusLogin.uid,
     });
-    setErrors(validation(formService));
+    //setErrors(validation(formService, phoneNumber));
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors(validation(formService));
+    setErrors(validation(formService, phoneNumber));
     if (Object.keys(errors).length === 0) {
       dispatch(addServices(formService));
       setFormService({
@@ -44,5 +55,7 @@ export const useFormService = (initilaValue, validation) => {
     handleChangue,
     errors,
     handleSubmit,
+    phoneNumber,
+    handlePhoneNumber,
   };
 };

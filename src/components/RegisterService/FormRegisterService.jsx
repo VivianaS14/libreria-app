@@ -10,18 +10,23 @@ const initialForm = {
   name_service: "",
   description: "",
 };
-const validationForm = (form) => {
+const validationForm = (form, phoneNumber) => {
   let errors = {};
   if (!form.name_service) errors.name = "Ingresa el nombre del servicio";
+  if (!phoneNumber) errors.phone = "Ingresa un número de contacto";
   if (!form.description)
     errors.description = "Ingresa la descripción del servicio";
   return errors;
 };
 const FormRegisterService = () => {
-  const { formService, handleChangue, errors, handleSubmit } = useFormService(
-    initialForm,
-    validationForm
-  );
+  const {
+    formService,
+    handleChangue,
+    errors,
+    handleSubmit,
+    phoneNumber,
+    handlePhoneNumber,
+  } = useFormService(initialForm, validationForm);
 
   return (
     <form className="register-form-service" onSubmit={handleSubmit}>
@@ -36,6 +41,19 @@ const FormRegisterService = () => {
           {errors.name && (
             <div className="error-form-service">
               <span>{errors.name}</span>
+            </div>
+          )}
+        </>
+        <>
+          <InputForm
+            name="phoneNumber"
+            value={phoneNumber}
+            onChange={handlePhoneNumber}
+            placeholder="Número de celular"
+          />
+          {errors.phone && (
+            <div className="error-form-service">
+              <span>{errors.phone}</span>
             </div>
           )}
         </>
