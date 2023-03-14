@@ -19,51 +19,47 @@ $font-family: "Radley", serif;
     color: $app-ft-color;
   }
 
+  .Servicio__Description {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    p {
+      color: $app-ft-color;
+      font-size: 20px;
+    }
+  }
+
   &__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
-  }
 
-  &__item {
-    padding: 1rem;
-    display: grid;
-    place-items: center;
-    width: 450px;
-    height: 300px;
-    background-color: #314028;
-    border-radius: 10px;
-    color: $app-main-color;
+    .MuiCard-root {
+      padding: 0 1rem;
+      font-family: "Radley", serif !important;
+      background-color: #f7f2e2;
 
-    hr {
-      width: 100%;
-      border: 0.1rem solid $app-main-color;
+      h4 {
+        margin: 1rem 0;
+        font-style: italic;
+      }
+
+      .MuiButton-root {
+        font-family: "Radley", serif !important;
+      }
     }
 
-    h3 {
-      padding-top: 0.8rem;
-      font-style: italic;
-    }
-
-    p {
-      text-align: center;
-    }
-
-    &:hover {
-      background-color: #485342;
+    .MuiCardActions-root {
+      justify-content: center;
     }
   }
 }
 
 @media screen and (max-width: 991px) {
-  .Servicios {
-    p {
-      width: 90%;
-    }
-  }
-  .Servicios__item {
-    width: 300px;
-    height: 400px;
+  .MuiCard-root {
+    margin: 0 1rem;
   }
 }

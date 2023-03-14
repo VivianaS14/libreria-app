@@ -18,7 +18,7 @@ const ServiceItem = ({ service }) => {
 
   return (
     <>
-      <Card sx={{ maxWidth: 450, height: "auto", borderRadius: 3 }}>
+      <Card sx={{ maxWidth: 450, borderRadius: 3 }}>
         <CardContent>
           <h4>{name_service}</h4>
           <p>{description}</p>
