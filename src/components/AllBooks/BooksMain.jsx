@@ -13,7 +13,7 @@ import Loading from "../Loading/Loading";
 import SearchBook from "../SearchBook/SearchBook.jsx";
 
 const BooksMain = () => {
-  const dispach = useDispatch();
+  const dispatch = useDispatch();
   const dataBooks = useSelector((state) => state.books.copyAllBooks);
 
   const [currentPag, setCurrentPag] = React.useState(1);
@@ -26,8 +26,9 @@ const BooksMain = () => {
   };
 
   React.useEffect(() => {
-    dispach(getBooks());
+    dispatch(getBooks());
   }, []);
+
   return (
     <React.Fragment>
       <h2>Intercambia y Disfruta</h2>
@@ -46,10 +47,17 @@ const BooksMain = () => {
         }}
       >
         <MenuIFilter />
-          <Box  sx={{display: 'flex', flexDirection: {xs: 'column', md:'row'}, alignItems: 'center'}}>
-              <SearchBook />
-              <OrderBooks />
-          </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+            fontFamily: "Radley, serif",
+          }}
+        >
+          <SearchBook />
+          <OrderBooks />
+        </Box>
       </Box>
       <Box
         sx={{

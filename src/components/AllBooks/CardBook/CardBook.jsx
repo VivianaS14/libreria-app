@@ -12,7 +12,15 @@ import BookIcon from "@mui/icons-material/Book";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Details from "../../Details/Details";
 
-const CardBook = ({ nameBook, image, status, author, language,description,phoneNumber }) => {
+const CardBook = ({
+  nameBook,
+  image,
+  status,
+  author,
+  language,
+  description,
+  phoneNumber,
+}) => {
   const [heart, setHeart] = React.useState(false);
   const [modalDetails, setModalDetails] = useState(false);
 
@@ -22,9 +30,16 @@ const CardBook = ({ nameBook, image, status, author, language,description,phoneN
 
   return (
     <>
-      <Card sx={{ display: "flex", minHeight: 250 }}>
+      <Card
+        sx={{
+          display: "flex",
+          minHeight: 250,
+          bgcolor: "#fffbf2",
+          borderRadius: 2,
+        }}
+      >
         <Box sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
-          <CardContent sx={{ flex: "1 0 auto", width: 150, textAlign: "left" }}>
+          <CardContent sx={{ flex: "1 0", width: 200, textAlign: "left" }}>
             <IconButton
               aria-label="heart"
               onClick={handleChangue}
@@ -36,10 +51,15 @@ const CardBook = ({ nameBook, image, status, author, language,description,phoneN
                 <FavoriteBorderIcon />
               )}
             </IconButton>
-            <Box sx={{ height: 80 }}>
+            <Box sx={{ height: 90 }}>
               <Typography
                 variant="h5"
-                sx={{ fontFamily: "bold", mt: 1, pl: 2 }}
+                sx={{
+                  fontFamily: "bold",
+                  mt: 1,
+                  pl: 2,
+                  color: "#9b4819",
+                }}
               >
                 {nameBook}
               </Typography>
@@ -51,11 +71,17 @@ const CardBook = ({ nameBook, image, status, author, language,description,phoneN
                 alignItems: "flex-start",
               }}
             >
-              <Typography>Author: {author}</Typography>
-              <Typography>Idioma: {language}</Typography>
+              <Typography sx={{ fontFamily: "Radley, serif" }}>
+                Author: {author}
+              </Typography>
+              <Typography sx={{ fontFamily: "Radley, serif" }}>
+                Idioma: {language}
+              </Typography>
               <Button
                 onClick={() => setModalDetails(true)}
                 variant="contained"
+                color="success"
+                sx={{ fontFamily: "Radley, serif", marginTop: 2 }}
                 endIcon={<BookIcon />}
               >
                 Detalles
@@ -66,7 +92,7 @@ const CardBook = ({ nameBook, image, status, author, language,description,phoneN
             component="img"
             image={image}
             sx={{ width: 135 }}
-            alt="book-img"
+            alt={`Imagen ${nameBook}`}
           />
         </Box>
       </Card>
