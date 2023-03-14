@@ -116,9 +116,9 @@ const FormRegisterBook = () => {
         </div>
         <div className="date-description">
           <div className="select-options">
-            <label>Selecciona el genero:</label>
+            <label>Selecciona el género:</label>
             <select onChange={handleChange} className="select-genres">
-              <option disabled>Generos</option>
+              <option disabled>Géneros</option>
               {categories.map((item) => (
                 <option key={item.id} value={item.name_category}>
                   {item.name_category}
@@ -132,10 +132,10 @@ const FormRegisterBook = () => {
             )}
           </div>
           <div className="select-date">
-            <label>Fecha de publicacion:</label>
+            <label>Fecha de publicación:</label>
             <InputForm
               type="date"
-              placeholder="Fecha de publicacion"
+              placeholder="Fecha de publicación"
               name="datePublish"
             />
             {errors.datePublish && (

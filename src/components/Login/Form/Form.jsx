@@ -8,8 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [login, setLogin] = useState(true);
-  const { user } = useContext(AppContext); 
-  const { setPicture, setUser, createUser, loginUser,loginGoogle,setAlert } =useContext(DispatchAppContext);
+  const { user } = useContext(AppContext);
+  const { setPicture, setUser, createUser, loginUser, loginGoogle, setAlert } =
+    useContext(DispatchAppContext);
   const navigate = useNavigate();
 
   const handlerRegister = (e) => {
@@ -21,8 +22,7 @@ const Form = () => {
     const reader = new FileReader();
     reader.onload = () => {
       setPicture(reader.result);
-      setAlert({type:'info', message:"Foto subida exitosamente"})
-
+      setAlert({ type: "info", message: "Foto subida exitosamente" });
     };
     reader.readAsDataURL(archivo);
   };
@@ -39,6 +39,7 @@ const Form = () => {
       <h2>{!login ? "Registrarse" : "Iniciar Sesión"}</h2>
       <form onSubmit={(e) => handlerRegister(e)} className="Login__form">
         {!login && (
+
         <>
           <InputForm
             required

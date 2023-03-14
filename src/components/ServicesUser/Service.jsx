@@ -4,10 +4,10 @@ import { Box, Typography } from "@mui/material";
 import ItemService from "./ItemServices/ItemService.jsx";
 import { settings } from "./utils/settingsSlick";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getServicesUser } from "../../redux/actions/action.service";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Service = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Service = () => {
     <Box
       sx={{
         backgroundColor: "#314028",
-        height: 580,
+        height: 700,
         pl: 7,
         pr: 7,
       }}

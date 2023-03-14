@@ -1,6 +1,7 @@
 import { addBook } from "../../services/addDataFirestore/addBook";
 import { allBooks } from "../reducer/bookSlices";
 import { getAllBooks } from "../../services/getDataFiretore/getAllBooks";
+import { deleteBook } from "../../services/deleteDataFirestore/deleteBook";
 
 export const addBookToUser = (state, action) => {
   addBook(action.payload);
@@ -33,29 +34,36 @@ export const filterByAuthors = (state, action) => {
     return book.author === action.payload;
   });
 };
-
 export const orderByName = (state, action) => {
   switch (action.payload) {
-    case 'A-Z':
+    case "A-Z":
       state.copyAllBooks = state.allBooks.sort((a, b) => {
-        if (a.title > b.title)return 1
-        if (b.title > a.title) return -1
-        return 0
+        if (a.title > b.title) return 1;
+        if (b.title > a.title) return -1;
+        return 0;
       });
       break;
-    case 'Z-A':
+    case "Z-A":
       state.copyAllBooks = state.allBooks.sort((a, b) => {
-        if (a.title < b.title)return 1
-        if (b.title < a.title) return -1
-        return 0
+        if (a.title < b.title) return 1;
+        if (b.title < a.title) return -1;
+        return 0;
       });
       break;
-    case 'reciente':
+    case "reciente":
       state.copyAllBooks = state.allBooks.sort((a, b) => {
-        return b.datePublish.slice(0, 4) - a.datePublish.slice(0, 4)
+        return b.datePublish.slice(0, 4) - a.datePublish.slice(0, 4);
       });
       break;
     default:
-      state.copyAllBooks = state.allBooks
+      state.copyAllBooks = state.allBooks;
   }
-}
+};
+export const deleteBooks = (state, action) => {
+  deleteBook(action.payload);
+};
+export const searchByName = (state, action) => {
+  state.copyAllBooks = state.allBooks.filter((book) => {
+    return book.title.toLowerCase().includes(action.payload.toLowerCase());
+  });
+};

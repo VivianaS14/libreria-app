@@ -5,15 +5,14 @@ import CardMostRead from "./CardMostRead/CardMostRead";
 import { getBooks } from "../../redux/actions/action.books";
 import { useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
-import "./MostRead.scss";
 import { DispatchAppContext } from "../../context/Context";
+import "./MostRead.scss";
 
 const MostRead = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const dataBooks = useSelector((state) => state.books.allBooks);
   const [mostRead, setMostRead] = useState([]);
-  
 
   useEffect(() => {
     dispatch(getBooks());
@@ -22,10 +21,16 @@ const MostRead = () => {
   useEffect(() => {
     setMostRead(dataBooks.slice(1, 7));
   }, [dataBooks]);
+
   return (
     <Container
       maxWidth="xl"
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       <Typography
         variant="h4"
@@ -37,7 +42,7 @@ const MostRead = () => {
           color: "#9b4819",
         }}
       >
-        Lo mas leído
+        Lo último en libros
       </Typography>
       <Grid maxWidth="lg" container columns={{ xs: 4, sm: 10, md: 12 }}>
         {mostRead.length >= 1 ? (

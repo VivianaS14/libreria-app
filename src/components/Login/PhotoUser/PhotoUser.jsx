@@ -22,50 +22,55 @@ const PhotoUser = () => {
 
   return (
     <>
-     {!photo?
-     <button className="btn btn-primary w-100" style={{fontSize:'20px'}} onClick={()=> setPhoto(true)}>Tomar foto</button>
-     :
-     <div>
-     <div>
-       {picture == null ? (
-         <Webcam
-           audio={false}
-           height={400}
-           ref={webcamRef}
-           width={400}
-           screenshotFormat="image/jpeg"
-           videoConstraints={videoConstraints}
-         />
-       ) : (
-         <img style={{width:400}} src={picture} />
-       )}
-     </div>
-     <div>
-       {picture != null ? (
-         <button
-           onClick={(e) => {
-             e.preventDefault();
-             setPicture(null);
-           }}
-           className="btn btn-primary"
-         >
-           Retake
-         </button>
-       ) : (
-         <button
-           onClick={(e) => {
-             e.preventDefault();
-             capture();
-           }}
-           className="btn btn-danger"
-         >
-           Capture
-         </button>
-       )}
-     </div>
-   </div>
-
-     }
+      {!photo ? (
+        <button
+          className="btn btn-primary w-100 my-4"
+          style={{ fontSize: "20px" }}
+          onClick={() => setPhoto(true)}
+        >
+          Tomar foto
+        </button>
+      ) : (
+        <div>
+          <div>
+            {picture == null ? (
+              <Webcam
+                audio={false}
+                height={400}
+                ref={webcamRef}
+                width={400}
+                screenshotFormat="image/jpeg"
+                videoConstraints={videoConstraints}
+              />
+            ) : (
+              <img style={{ width: 400 }} src={picture} />
+            )}
+          </div>
+          <div>
+            {picture != null ? (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPicture(null);
+                }}
+                className="btn btn-primary"
+              >
+                Retake
+              </button>
+            ) : (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  capture();
+                }}
+                className="btn btn-danger"
+              >
+                Capture
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -24,12 +24,11 @@ const FilterByAuthors = ({ setPaginado }) => {
   };
 
   return (
-    <Accordion sx={{ mb: 2 }}>
+    <Accordion sx={{ mb: 2, bgcolor: "#f4f1e8" }}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography>Autores </Typography>
+        <Typography sx={{ fontFamily: "Radley, serif" }}>Autores</Typography>
       </AccordionSummary>
-
-      <AccordionDetails sx={{ overflowY: "scroll", height: "300px " }}>
+      <AccordionDetails sx={{ overflowY: "scroll", height: 200 }}>
         <RadioGroup>
           <FormControlLabel
             onChange={handleFilterByAuthors}

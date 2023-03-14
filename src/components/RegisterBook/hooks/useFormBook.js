@@ -2,21 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import { addOneBook } from "../../../redux/reducer/bookSlices.js";
 import { useDispatch } from "react-redux";
 import { DispatchAppContext } from "../../../context/Context.jsx";
+import { getBooks } from "../../../redux/actions/action.books.js";
 
-export const useFormBook = (form, statusLogin,data) => {
-
-  
-
-  const [numberPhone, setNumberPhone] =useState('')
+export const useFormBook = (form, statusLogin, data) => {
+  const [numberPhone, setNumberPhone] = useState("");
 
   useEffect(() => {
-    setNumberPhone(data?.phone ? data.phone : "")
-  },[data])
- 
-  const handlerPhone= (e)=>{
-     setNumberPhone(e.target.value)
-  }
+    setNumberPhone(data?.phone ? data.phone : "");
+  }, [data]);
 
+  const handlerPhone = (e) => {
+    setNumberPhone(e.target.value);
+  };
 
   const { setAlert } = useContext(DispatchAppContext);
 
@@ -27,14 +24,16 @@ export const useFormBook = (form, statusLogin,data) => {
     setRadio(event.target.value);
   };
   const [errors, setErrors] = React.useState({});
-  let genres = [];
+  const [genres, setGenres] = useState("");
   const handleChange = (e) => {
-    genres = [...genres, e.target.value];
+    setGenres(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(form.current);
     const errors = {};
+    console.log(genres);
+
     if (!formData.get("title").trim()) {
       errors.title = "Debes ingresar el nombre del libro";
     }
@@ -45,13 +44,13 @@ export const useFormBook = (form, statusLogin,data) => {
       errors.author = "Debes ingresar el autor del libro";
     }
     if (!formData.get("datePublish").trim()) {
-      errors.datePublish = "Debes ingresar la fecha de publicacion";
+      errors.datePublish = "Debes ingresar la fecha de publicación";
     }
     if (!formData.get("description").trim()) {
-      errors.description = "Debes ingresar una descripcion";
+      errors.description = "Debes ingresar una descripción";
     }
     if (genres.length === 0) {
-      errors.genres = "Debes ingresar minimo un genero";
+      errors.genres = "Debes seleccionar un género";
     }
     if (Object.keys(errors).length === 0) {
       const book = {
@@ -67,9 +66,10 @@ export const useFormBook = (form, statusLogin,data) => {
         userId: statusLogin.uid,
       };
       dispatch(addOneBook(book));
-      genres = [];
+      setGenres("");
       form.current.reset();
       setAlert({ type: "info", message: "Libro registrado" });
+      dispatch(getBooks());
     } else {
       setErrors(errors);
     }

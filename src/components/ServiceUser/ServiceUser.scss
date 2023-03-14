@@ -1,0 +1,47 @@
+.ServiceUser {
+  width: 100%;
+  margin-top: 5rem;
+  text-align: center;
+  font-family: "Radley", serif;
+  color: #9b4819;
+
+  h2 {
+    font-size: 35px;
+  }
+
+  &__container {
+    width: 100%;
+    margin: 3rem 0;
+    background-color: #f4f1e8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+
+    h3 {
+      margin: 3rem 0;
+      color: #747373;
+    }
+  }
+
+  h4 {
+    padding: 1rem 0;
+    color: #9b4819;
+  }
+
+  p {
+    padding: 0 1rem;
+  }
+
+  .MuiCard-root {
+    margin: 1rem;
+    font-family: "Radley", serif !important;
+    background-color: #f7f2e2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ServiceUser__container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}

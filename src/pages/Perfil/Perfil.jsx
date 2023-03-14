@@ -7,13 +7,13 @@ import BooksUser from "../../components/BooksUser/BooksUser";
 import { AppContext } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
 import "./Perfil.scss";
+import ServiceUser from "../../components/ServiceUser/ServiceUser";
 
 const Perfil = () => {
   const { statusLogin } = useContext(AppContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-
-  if (!statusLogin) return <h1>Inicie sesion para navegar</h1> ;
+  if (!statusLogin) return <h1>Inicie sesión para navegar</h1>;
 
   return (
     <div className="Perfil">
@@ -32,12 +32,9 @@ const Perfil = () => {
             textTitle="Registrar Servicios"
           />
         </div>
-
-        {/* <Grid item xs={2} sm={4} md={4}>
-            <BtnRegisterBook textTitle="Registrar Eventos" />
-          </Grid> */}
       </div>
       <BooksUser />
+      <ServiceUser />
     </div>
   );
 };

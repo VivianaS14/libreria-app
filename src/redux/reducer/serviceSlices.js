@@ -1,18 +1,19 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {addServiceOfUser} from "../actions/action.service.js";
-import {getServiceData} from '../actions/action.service';
+import { createSlice } from "@reduxjs/toolkit";
+import { addServiceOfUser, deleteServices } from "../actions/action.service.js";
+import { getServiceData } from "../actions/action.service";
 
 const initialState = {
-    allServices: []
-}
+  allServices: [],
+};
 const serviceSlices = createSlice({
-    name: 'services',
-    initialState,
-    reducers: {
-        addServices: addServiceOfUser,
-        getServices: getServiceData
-
-    }
-})
-export const {addServices, getServices} = serviceSlices.actions
-export {serviceSlices}
+  name: "services",
+  initialState,
+  reducers: {
+    addServices: addServiceOfUser,
+    getServices: getServiceData,
+    deleteService: deleteServices,
+  },
+});
+export const { addServices, getServices, deleteService } =
+  serviceSlices.actions;
+export { serviceSlices };

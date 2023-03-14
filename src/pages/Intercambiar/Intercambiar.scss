@@ -13,4 +13,8 @@ $app-ft-color: #9b4819;
     padding: 2rem 0;
     color: $app-ft-color;
   }
+
+  .MuiFormControlLabel-root {
+    font-family: $font-family !important;
+  }
 }
