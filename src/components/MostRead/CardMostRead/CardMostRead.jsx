@@ -20,7 +20,9 @@ const CardMostRead = ({
 }) => {
   const [modalDetails, setModalDetails] = useState(false);
   return (
-    <Card sx={{ maxWidth: 300, bgcolor: "#fffbf2", m: "auto" }}>
+    <Card
+      sx={{ maxWidth: 300, bgcolor: "#fffbf2", m: "auto", borderRadius: 3 }}
+    >
       <CardMedia
         component="img"
         height="290"
@@ -31,17 +33,24 @@ const CardMostRead = ({
         sx={{
           display: "flex",
           flexDirection: "column",
+          justifyContent: "center",
+          gap: 2,
           fontFamily: "Radley, serif",
+          height: 80,
+          ml: 1,
         }}
       >
-        <Typography variant="span" sx={{ fontSize: 25, color: "#9b4819" }}>
+        <Typography
+          variant="span"
+          sx={{ fontSize: 23, color: "#9b4819", lineHeight: 1 }}
+        >
           {nameBook}
         </Typography>
         <Typography variant="span">{author}</Typography>
       </CardContent>
       <CardActions>
         <Button
-          sx={{ backgroundColor: "#16794b", mb: 2 }}
+          sx={{ backgroundColor: "#16794b", mb: 2, ml: 1 }}
           onClick={() => setModalDetails(true)}
           variant="contained"
           endIcon={<BookIcon />}

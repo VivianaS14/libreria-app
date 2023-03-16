@@ -31,6 +31,8 @@ const ItemService = ({ nameService, nameUser, phone, description }) => {
             fontFamily: "Radley, serif",
             textAlign: "center",
             fontSize: 15,
+            height: 150,
+            overflow: "hidden",
           }}
         >
           {description}
