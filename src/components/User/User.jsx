@@ -41,7 +41,7 @@ const User = () => {
     picture,
   } = data;
   return (
-    <div className="d-flex justify-content-around flex-wrap  align-items-center  border p-5 m-5 position-relative">
+    <div className="d-flex justify-content-around flex-wrap  align-items-center border p-5 m-5 position-relative">
       <img
         style={{ width: "200px", borderRadius: 12 }}
         src={picture ? picture : photoURL}

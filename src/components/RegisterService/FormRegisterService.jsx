@@ -46,6 +46,7 @@ const FormRegisterService = () => {
         </>
         <>
           <InputForm
+          type='number'
             name="phoneNumber"
             value={phoneNumber}
             onChange={handlePhoneNumber}

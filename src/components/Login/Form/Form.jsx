@@ -125,7 +125,7 @@ const Form = () => {
         </p>
         <button onClick={loginGoogle} className="Login__buttonGoogle">
           Iniciar con
-          <span className="Login__google">Google</span>
+          <span className="Login__google"> Google</span>
         </button>
       </form>
     </>
