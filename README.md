@@ -17,39 +17,39 @@ Link del Sitio Web: <a href= "https://makaia-libreria.web.app/#/">Sitio Web</a>
 
 La primera página nos muestra el título, los últimos libros registrados y servicios que pueden ser de tu interés. También tenemos un botón que nos redirige al inicio, a la página de los libros a intercambiar, a la página de los servicios y un botón que nos redirige al perfil del usuario.
 
-<img height="400" src="./images/inicio.png" alt="Home image">
-<img height="400" src="./images/lo-ultimo.png" alt="Home image">
-<img height="400" src="./images/servicios-inicio.png" alt="Home image">
+<img width="600" src="./images/inicio.png" alt="Home image">
+<img width="600" src="./images/lo-ultimo.png" alt="Home image">
+<img width="600" src="./images/servicios-inicio.png" alt="Home image">
 
 ## Intercambiar:
 
 Esta página nos muestra todos los libros que se encuentran disponibles para intercambio, permitiendo aplicar los filtros y orden que el usuario desee. Las tarjetas para cada libro tienen un botón para ver los detalles y la vista de los detalles tiene el botón para contactar al propietario por medio de WhatsApp.
 
-<img height="400" src="./images/intercambiar.png" alt="Intercambiar">
-<img height="400" src="./images/detalles.png" alt="Intercambiar">
+<img width="600" src="./images/intercambiar.png" alt="Intercambiar">
+<img width="600" src="./images/detalles.png" alt="Intercambiar">
 
 ## Servicios:
 
 Esta página nos muestra los servicios que se encuentran publicados en la página, junto con el botón para contactar el servicio.
 
-<img height="400" src="./images/servicios.png" alt="Servicios">
+<img width="600" src="./images/servicios.png" alt="Servicios">
 
 ## Perfil:
 
 En esta página se muestran los datos personales del usuario, asi como un botón que permite editarlos en caso de que los requiera. El formulario que permite agregar libros a su perfil y el formulario para agregar servicios que pueda ofrecer.
 
-<img height="300" src="./images/data-perfil.png" alt="Perfil">
-<img height="400" src="./images/form-libros.png" alt="Formularios">
-<img height="400" src="./images/form-servicios.png" alt="Formularios">
+<img width="600" src="./images/data-perfil.png" alt="Perfil">
+<img width="600" src="./images/form-libros.png" alt="Formularios">
+<img width="600" src="./images/form-servicios.png" alt="Formularios">
 
-<img height="400" src="./images/libros-servicios.png" alt="Libros y Servicios">
+<img width="600" src="./images/libros-servicios.png" alt="Libros y Servicios">
 
 ## Iniciar Sesión y Registro:
 
 Aquí podemos registrarnos como usuarios con correo y contraseña o con la cuenta de Google.
 
-<img height="300" src="./images/inicio-sesion.png" alt="Registro-InicioSesión">
-<img height="300" src="./images/registro.png" alt="Registro-InicioSesión">
+<img width="600" src="./images/inicio-sesion.png" alt="Registro-InicioSesión">
+<img width="600" src="./images/registro.png" alt="Registro-InicioSesión">
 
 ## CRÉDITOS:
 
