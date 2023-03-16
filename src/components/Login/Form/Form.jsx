@@ -39,63 +39,62 @@ const Form = () => {
       <h2>{!login ? "Registrarse" : "Iniciar Sesión"}</h2>
       <form onSubmit={(e) => handlerRegister(e)} className="Login__form">
         {!login && (
-
-        <>
-          <InputForm
-            required
-            onChange={(e) => handlerChange(e)}
-            name="fullName"
-            placeholder="Nombre y apellido"
-            type="text"
-          />
-          <InputForm
-            required
-            onChange={(e) => handlerChange(e)}
-            name="email"
-            placeholder="Email"
-            type="email"
-          />
-          <InputForm
-            required
-            onChange={(e) => handlerChange(e)}
-            name="address"
-            placeholder="Direccción"
-            type="text"
-          />
-          <InputForm
-            required
-            onChange={(e) => handlerChange(e)}
-            name="city"
-            placeholder="ciudad"
-            type="text"
-          />
-          <InputForm
-            required
-            onChange={(e) => handlerChange(e)}
-            name="phone"
-            placeholder="Celular"
-            type="number"
-            minLength="10"
-          />
-          <InputForm
-            onChange={(e) => handlerChange(e)}
-            minLength="6"
-            name="password"
-            placeholder="Contraseña"
-            type="password"
-            required
-          />
-          <PhotoUser />
-          <UploadPhoto onChange={mostrarImagen} />
-          <button
-            onClick={() => createUser()}
-            type="submit"
-            className="Login__button"
-          >
-            Registrarse
-          </button>
-        </>
-      )}
+          <>
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="fullName"
+              placeholder="Nombre y apellido"
+              type="text"
+            />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="email"
+              placeholder="Email"
+              type="email"
+            />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="address"
+              placeholder="Dirección"
+              type="text"
+            />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="city"
+              placeholder="Ciudad"
+              type="text"
+            />
+            <InputForm
+              required
+              onChange={(e) => handlerChange(e)}
+              name="phone"
+              placeholder="Celular"
+              type="number"
+              minLength="10"
+            />
+            <InputForm
+              onChange={(e) => handlerChange(e)}
+              minLength="6"
+              name="password"
+              placeholder="Contraseña"
+              type="password"
+              required
+            />
+            <PhotoUser />
+            <UploadPhoto onChange={mostrarImagen} />
+            <button
+              onClick={() => createUser()}
+              type="submit"
+              className="Login__button"
+            >
+              Registrarse
+            </button>
+          </>
+        )}
         {login && (
           <>
             <InputForm
