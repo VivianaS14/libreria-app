@@ -33,7 +33,7 @@ const CardBook = ({
       <Card
         sx={{
           display: "flex",
-          width: 350,
+          //width: 350,
           height: 300,
           bgcolor: "#fffbf2",
           borderRadius: 3,
