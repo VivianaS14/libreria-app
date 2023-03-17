@@ -41,9 +41,7 @@ const BooksMain = () => {
             md: "flex-end",
           },
           fontFamily: "Radley, serif",
-          mr: 4,
-          mt: 2,
-          mb: 2,
+          m: 3,
         }}
       >
         <MenuIFilter />
@@ -94,7 +92,7 @@ const BooksMain = () => {
               currentBooks.map((book) => (
                 <Grid
                   item
-                  sx={{ mb: 2, pl: 1 }}
+                  sx={{ mb: 4, pl: 2 }}
                   xs={2}
                   sm={4}
                   md={4}

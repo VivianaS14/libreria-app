@@ -18,6 +18,7 @@ const SearchBook = () => {
         label="Buscar libro por nombre"
         color="secondary"
         type="search"
+        variant="standard"
       />
     </React.Fragment>
   );

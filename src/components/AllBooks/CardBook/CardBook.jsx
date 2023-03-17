@@ -33,9 +33,10 @@ const CardBook = ({
       <Card
         sx={{
           display: "flex",
-          minHeight: 250,
+          width: 350,
+          height: 300,
           bgcolor: "#fffbf2",
-          borderRadius: 2,
+          borderRadius: 3,
         }}
       >
         <Box sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
@@ -51,7 +52,7 @@ const CardBook = ({
                 <FavoriteBorderIcon />
               )}
             </IconButton>
-            <Box sx={{ height: 90 }}>
+            <Box sx={{ height: 90, width: 220 }}>
               <Typography
                 variant="h5"
                 sx={{
@@ -69,19 +70,28 @@ const CardBook = ({
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
+                justifyContent: "space-evenly",
+                height: 120,
               }}
             >
-              <Typography sx={{ fontFamily: "Radley, serif" }}>
+              <Typography
+                sx={{
+                  fontFamily: "Radley, serif",
+                  width: 210,
+                  height: 50,
+                  overflow: "hidden",
+                }}
+              >
                 Author: {author}
               </Typography>
-              <Typography sx={{ fontFamily: "Radley, serif" }}>
+              <Typography sx={{ fontFamily: "Radley, serif", mb: 1.5 }}>
                 Idioma: {language}
               </Typography>
               <Button
                 onClick={() => setModalDetails(true)}
                 variant="contained"
                 color="success"
-                sx={{ fontFamily: "Radley, serif", marginTop: 2 }}
+                sx={{ fontFamily: "Radley, serif" }}
                 endIcon={<BookIcon />}
               >
                 Detalles
@@ -91,7 +101,7 @@ const CardBook = ({
           <CardMedia
             component="img"
             image={image}
-            sx={{ width: 135 }}
+            sx={{ width: 130 }}
             alt={`Imagen ${nameBook}`}
           />
         </Box>

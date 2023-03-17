@@ -26,6 +26,7 @@ const OrderBooks = () => {
           id="ordenar"
           label="Ordenar por "
           onChange={handleChange}
+          variant="standard"
         >
           <MenuItem value="">
             <em>Ninguno</em>
