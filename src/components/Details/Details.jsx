@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Button } from "@mui/material";
 import { AppContext, DispatchAppContext } from "../../context/Context";
-import "./Details.scss";
 import { WhatsApp } from "@mui/icons-material";
+import "./Details.scss";
 
 const Details = ({
   nameBook,

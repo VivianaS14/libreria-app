@@ -90,14 +90,7 @@ const BooksMain = () => {
           >
             {currentBooks.length >= 1 ? (
               currentBooks.map((book) => (
-                <Grid
-                  item
-                  sx={{ mb: 4, pl: 2 }}
-                  xs={2}
-                  sm={4}
-                  md={4}
-                  key={book.id}
-                >
+                <Grid item sx={{ mb: 4 }} xs={2} sm={4} md={4} key={book.id}>
                   <CardBook
                     nameBook={book.title}
                     image={book.image}

@@ -67,6 +67,12 @@
       color: #fff;
     }
 
+    .details__description {
+      height: 250px;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
     @media (max-width: 1000px) {
       padding: 2vh 15vw;
     }

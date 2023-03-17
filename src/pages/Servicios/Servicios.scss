@@ -31,6 +31,7 @@ $font-family: "Radley", serif;
   }
 
   &__content {
+    padding: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -61,5 +62,9 @@ $font-family: "Radley", serif;
 @media screen and (max-width: 991px) {
   .MuiCard-root {
     margin: 0 1rem;
+  }
+
+  .Servicios__content {
+    padding: 0;
   }
 }
