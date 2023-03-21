@@ -45,7 +45,12 @@ const MostRead = () => {
       >
         Lo último en libros
       </Typography>
-      <Grid maxWidth="lg" container columns={{ xs: 4, sm: 10, md: 12 }}>
+      <Grid
+        maxWidth="lg"
+        container
+        columns={{ xs: 2, sm: 10, md: 12 }}
+        sx={{ justifyContent: "center" }}
+      >
         {mostRead.length >= 1 ? (
           mostRead.map((card) => (
             <Grid

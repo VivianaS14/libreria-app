@@ -86,12 +86,20 @@ const BooksMain = () => {
           <Grid
             maxWidth="lg"
             container
-            sx={{gap: 2}}
-            columns={{ xs: 2, sm: 2, md: 10, lg: 12.4 }}
+            sx={{ gap: 2, justifyContent: "center" }}
+            columns={{ xs: 2, sm: 4, md: 10, lg: 12.4 }}
           >
             {currentBooks.length >= 1 ? (
               currentBooks.map((book) => (
-                <Grid item sx={{ mb: 4 }} xs={2} sm={4} md={4} lg={4} key={book.id}>
+                <Grid
+                  item
+                  sx={{ mb: 4 }}
+                  xs={2}
+                  sm={4}
+                  md={4}
+                  lg={4}
+                  key={book.id}
+                >
                   <CardBook
                     nameBook={book.title}
                     image={book.image}
