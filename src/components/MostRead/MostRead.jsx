@@ -40,6 +40,7 @@ const MostRead = () => {
           fontFamily: "Radley, serif",
           fontSize: 48,
           color: "#9b4819",
+          textAlign: "center",
         }}
       >
         Lo último en libros

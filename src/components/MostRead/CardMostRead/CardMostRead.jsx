@@ -42,7 +42,7 @@ const CardMostRead = ({
       >
         <Typography
           variant="span"
-          sx={{ fontSize: 23, color: "#9b4819", lineHeight: 1 }}
+          sx={{ fontSize: 20, color: "#9b4819", lineHeight: 1 }}
         >
           {nameBook}
         </Typography>
