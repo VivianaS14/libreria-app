@@ -62,3 +62,11 @@ Aquí podemos registrarnos como usuarios con correo y contraseña o con la cuent
 - Material UI
 
 - Firebase
+
+## Colaboradores:
+
+- Andres Perez: <a href= "https://github.com/andres0818">Perfil Github</a>
+
+- Andres Vega: <a href= "https://github.com/jandres-vega">Perfil Github</a>
+
+- Viviana Soriano: <a href= "https://github.com/VivianaS14">Perfil Github</a>
