@@ -1,7 +1,12 @@
-import React from "react";
-import { Box, CardContent, Typography } from "@mui/material";
+import React, { useContext } from "react";
+import { Box, Button, CardContent, Typography } from "@mui/material";
+import { AppContext, DispatchAppContext } from "../../../context/Context";
+import { WhatsApp } from "@mui/icons-material";
 
 const ItemService = ({ nameService, nameUser, phone, description }) => {
+  const { statusLogin } = useContext(AppContext);
+  const { setModal } = useContext(DispatchAppContext);
+
   return (
     <Box sx={{ m: 2, fontFamily: "Radley, serif" }}>
       <Typography
@@ -26,6 +31,8 @@ const ItemService = ({ nameService, nameUser, phone, description }) => {
             fontFamily: "Radley, serif",
             textAlign: "center",
             fontSize: 15,
+            height: 150,
+            overflow: "hidden",
           }}
         >
           {description}
@@ -39,12 +46,51 @@ const ItemService = ({ nameService, nameUser, phone, description }) => {
           mt: 3,
         }}
       >
-        <Typography variant="span" sx={{ color: "#efefef" }}>
-          {nameUser}
-        </Typography>
-        <Typography variant="span" sx={{ color: "#efefef" }}>
-          {phone}
-        </Typography>
+        {statusLogin && (
+          <>
+            <Typography variant="span" sx={{ color: "#efefef", fontSize: 18 }}>
+              {nameUser}
+            </Typography>
+            <Typography variant="span" sx={{ color: "#efefef", fontSize: 18 }}>
+              +57 {phone}
+            </Typography>
+            <Button
+              variant="contained"
+              color="success"
+              sx={{
+                fontFamily: "Radley, serif",
+                color: "#fff",
+                pl: 3,
+                pr: 3,
+                mt: 2,
+              }}
+              endIcon={<WhatsApp />}
+            >
+              <a
+                href={`https://wa.me/${phone}`}
+                target="_blank"
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                Contactar Servicio
+              </a>
+            </Button>
+          </>
+        )}
+        {!statusLogin && (
+          <Button
+            onClick={() => setModal(true)}
+            variant="contained"
+            color="success"
+            sx={{
+              fontFamily: "Radley, serif",
+              color: "#fff",
+              pl: 3,
+              pr: 3,
+            }}
+          >
+            Inicia sesión para mas detalles
+          </Button>
+        )}
       </Box>
     </Box>
   );

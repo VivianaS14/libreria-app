@@ -1,22 +1,23 @@
 import React from "react";
-import { Box } from "@mui/material";
-import { data } from "./dataServices";
+import { useDispatch, useSelector } from "react-redux";
+import { getServicesUser } from "../../redux/actions/action.service";
+import ServicioItem from "./ServiciosItem/ServicioItem";
 import "./Servicios.scss";
 
 const Servicios = () => {
+  const servicesOfUsers = useSelector((state) => state.services.allServices);
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(getServicesUser());
+  }, []);
+
   return (
     <div className="Servicios">
       <h2>Servicios</h2>
-
       <div className="Servicios__content">
-        {data.map((item) => (
-          <Box className="Servicios__item" key={item.id}>
-            <h3>{item.service}</h3>
-            <hr />
-            <p>{item.description}</p>
-            <p>{item.nameUser}</p>
-            <p>{item.phone}</p>
-          </Box>
+        {servicesOfUsers.map((item) => (
+          <ServicioItem key={item.id} service={item} />
         ))}
       </div>
     </div>

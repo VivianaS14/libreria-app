@@ -1,6 +1,22 @@
-.InputForm{
-    width: 100%;
+.InputForm {
+  width: 95%;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin: 1rem;
+  border-radius: 8px;
+  outline: none;
+  font-family: "Radley", serif;
+  font-size: 18px;
+  font-style: italic;
+
+  &:focus {
     border: none;
-    padding: 5%;
-    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .InputForm {
+    width: 95%;
+    margin: 1rem 0 1rem 0;
+  }
 }

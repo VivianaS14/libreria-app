@@ -22,7 +22,7 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    transform: translatey(6px);
+    transform: translateY(6px);
 
     &:hover {
       font-weight: bold;
@@ -34,7 +34,7 @@
     height: 80%;
     font-family: $font-family;
     display: grid;
-    overflow: scroll;
+    overflow-y: scroll;
 
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     background-color: rgb(237, 228, 213);
@@ -42,7 +42,7 @@
     position: relative;
 
     @media (max-width: 1550px) {
-      padding: 20px;
+      padding: 30px;
     }
   }
 
@@ -59,6 +59,11 @@
     height: 30px;
     font-size: 20px;
     text-align: center;
+    margin: 1rem;
+    @media (max-width: 690px) {
+      position: fixed;
+      margin: 20% 8%;
+    }
   }
 
   &__infoContainer {
@@ -66,6 +71,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    //width: 90%;
+    @media (max-width: 690px) {
+      width: 50%;
+    }
   }
 
   &__logo {
@@ -102,6 +111,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media (max-width: 690px) {
+      width: 50%;
+    }
   }
 
   &__iconUser {
@@ -113,7 +125,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    //gap: 15px;
 
     &input {
       border-radius: 8px;
@@ -128,6 +140,7 @@
     border: none;
     padding: 5px 15px;
     border-radius: 8px;
+    margin: 1.5rem 0;
 
     &:hover {
       opacity: 0.5;
@@ -140,13 +153,16 @@
   }
 
   &__buttonGoogle {
+    width: 100%;
+    padding: 5px 15px;
     background-color: $colorButonGoogle;
     color: white;
     font-weight: bold;
     border: none;
-    width: 100%;
-    padding: 5px 15px;
     border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    gap: 0.5rem;
 
     &:hover {
       opacity: 0.5;
@@ -157,11 +173,11 @@
     background-image: linear-gradient(
       to right,
       #4285f4 0%,
-      #4285f4 20%,
-      #db4437 22%,
-      #db4437 40%,
+      #4285f4 25%,
+      #db4437 26%,
+      #db4437 43%,
       #f4b400 40%,
-      #f4b400 58%,
+      #f4b400 60%,
       #4285f4 60%,
       #4285f4 70%,
       #0f9d58 85%,

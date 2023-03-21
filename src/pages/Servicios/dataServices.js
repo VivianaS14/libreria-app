@@ -26,7 +26,7 @@ export const data = [
         nameUser: "Andres Perez"
     },
     {
-        id: 3,
+        id: 4,
         service: "Impresion",
         description: "Boost your product and service's credibility by adding testimonials \n" +
             "from your clients. People love recommendations so feedback\n " +
@@ -35,7 +35,7 @@ export const data = [
         nameUser: "Andres Perez"
     },
     {
-        id: 3,
+        id: 5,
         service: "Impresion",
         description: "Boost your product and service's credibility by adding testimonials \n" +
             "from your clients. People love recommendations so feedback\n " +

@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [login, setLogin] = useState(true);
-  const { setPicture, setUser, createUser, loginUser,setAlert } =
+  const { user } = useContext(AppContext);
+  const { setPicture, setUser, createUser, loginUser, loginGoogle, setAlert } =
     useContext(DispatchAppContext);
-  const { user } = useContext(AppContext); //temporal mientras se crea la base de datos
   const navigate = useNavigate();
 
   const handlerRegister = (e) => {
@@ -22,8 +22,7 @@ const Form = () => {
     const reader = new FileReader();
     reader.onload = () => {
       setPicture(reader.result);
-      setAlert({type:'info', message:"Foto subida exitosamente"})
-
+      setAlert({ type: "info", message: "Foto subida exitosamente" });
     };
     reader.readAsDataURL(archivo);
   };
@@ -59,14 +58,14 @@ const Form = () => {
               required
               onChange={(e) => handlerChange(e)}
               name="address"
-              placeholder="Direccción"
+              placeholder="Dirección"
               type="text"
             />
             <InputForm
               required
               onChange={(e) => handlerChange(e)}
               name="city"
-              placeholder="ciudad"
+              placeholder="Ciudad"
               type="text"
             />
             <InputForm
@@ -124,9 +123,9 @@ const Form = () => {
             {!login ? "Iniciar Sesión" : "Registrarse"}
           </span>
         </p>
-        <button className="Login__buttonGoogle">
+        <button onClick={loginGoogle} className="Login__buttonGoogle">
           Iniciar con
-          <span className="Login__google">Google</span>
+          <span className="Login__google"> Google</span>
         </button>
       </form>
     </>

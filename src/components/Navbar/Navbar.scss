@@ -26,6 +26,10 @@ $font-family: "Radley", serif;
       }
     }
   }
+
+  .collapse {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 991px) {

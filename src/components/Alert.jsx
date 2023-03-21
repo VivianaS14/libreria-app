@@ -23,8 +23,8 @@ const styles = {
     boxShadow: "0 0 0 5px rgba(0, 128, 0, 0.1)"
   },
   info: {
-    boxShadow: "0 0 0 5px rgba(0, 174, 255, 0.1)",
     color: "rgba(0, 174, 255)",
+    boxShadow: "0 0 0 5px rgba(0, 174, 255, 0.1)",
   },
 };
 

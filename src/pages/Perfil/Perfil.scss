@@ -1,0 +1,19 @@
+.Perfil {
+  width: 70%;
+  margin: auto;
+
+  &__formularios {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Perfil {
+    width: 100%;
+
+    &__formularios {
+      width: 90%;
+    }
+  }
+}

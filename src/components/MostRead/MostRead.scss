@@ -1,0 +1,17 @@
+$font-family: "Radley", serif;
+$app-ft-color: #9b4819;
+
+.btn-mostRead {
+  margin: 3rem;
+  border: none;
+  background-color: transparent;
+  font-family: $font-family;
+  font-style: italic;
+  font-size: 30px;
+  text-decoration: underline;
+  color: $app-ft-color;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
