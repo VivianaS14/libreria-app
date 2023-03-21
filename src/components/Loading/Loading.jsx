@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Loading.scss";
 
 const Loading = () => {
+  const [loading, setLoading]=useState(false)
+
+  setInterval(() => {
+    setLoading(true)
+  }, 2000);
+
+
   return (
     <>
-      <div  className="container">
+      {
+        !loading?<div  className="container">
         <div className="loading">
           <div className="book">
             <div className="book-cover"></div>
@@ -21,6 +29,8 @@ const Loading = () => {
           </div>
         </div>
       </div>
+      : <h1 style={{color:'gray'}}>Resultados no encontrados</h1>
+      }
     </>
   );
 };
